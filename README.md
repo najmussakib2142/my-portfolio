@@ -1,16 +1,53 @@
-# React + Vite
+# Najmus Sakib's Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my personal portfolio! This is a modern, responsive, and interactive web application built with **React**, **Tailwind CSS**, **DaisyUI**, **Framer Motion**, and **AOS animations**.
 
-Currently, two official plugins are available:
+Live demo: [https://najmuss-portfolio.netlify.app/](https://najmuss-portfolio.netlify.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## Table of Contents
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- [About Me](#about-me)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contact](#contact)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## About Me
+
+Hi! I'm **Najmus Sakib**, a passionate frontend developer specializing in building engaging and user-friendly web applications. This portfolio showcases my projects, skills, and design aesthetics.
+
+---
+
+## Features
+
+- Responsive design for all screen sizes
+- Smooth animations using **AOS** and **Framer Motion**
+- Interactive UI with Tailwind CSS & DaisyUI components
+- Projects showcase with live links and GitHub repository links
+- Contact section for inquiries
+
+---
+
+## Tech Stack
+
+- **React** – Frontend library  
+- **Tailwind CSS** – Styling and responsive design  
+- **DaisyUI** – Pre-built UI components  
+- **Framer Motion** – Smooth animations  
+- **AOS** – Scroll-based animations  
+- **Vite** – Development server and build tool
+
+---
+
+## Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/yourusername/my-portfolio.git
+cd my-portfolio
