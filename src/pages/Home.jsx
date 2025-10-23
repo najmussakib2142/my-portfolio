@@ -1,15 +1,52 @@
-// import About from "./Home/About";
-// import Education from "./Home/Education";
+import { useEffect, useState } from "react";
+import Contact from "./Contact/Contact";
+import About from "./Home/About";
+import Education from "./Home/Education";
 import Hero from "./Home/Hero";
-// import Skills from "./Home/Skills";
+import Skills from "./Home/Skills";
+import Projects from "./Projects/Projects";
+import ToolsSliderSection from "./ToolsSliderSection/ToolsSliderSection";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { FaArrowUp } from "react-icons/fa";
+
 
 const Home = () => {
+
+  const [showTopBtn, setShowTopBtn] = useState(false);
+
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true, easing: "ease-in-out" });
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) setShowTopBtn(true);
+      else setShowTopBtn(false);
+    });
+  }, []);
+
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
+
+
   return (
-    <div className="min-h-screen bg-base-100 text-center">
+    <div className="min-h-screen max-w-7xl mx-auto bg-base-100 text-center">
       <Hero></Hero>
       {/* <About></About> */}
       {/* <Education></Education> */}
+      <ToolsSliderSection></ToolsSliderSection>
+      <Skills></Skills>
+      <Education></Education>
+      <Projects></Projects>
       {/* <Skills></Skills> */}
+      <Contact></Contact>
+
+      {showTopBtn && (
+        <button
+          onClick={scrollToTop}
+          className="fixed cursor-pointer bottom-6 right-6 p-3 rounded-full bg-primary text-white shadow-lg hover:bg-primary-focus transition"
+        >
+          <FaArrowUp />
+        </button>
+      )}
+
     </div>
   );
 };

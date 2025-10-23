@@ -1,118 +1,113 @@
-
-
-// const Navbar = () => {
-//   return (
-//     <nav className="bg-base-100 shadow">
-//       <div className="max-w-6xl mx-auto px-4 py-2">
-//         <div className="flex justify-between items-center">
-//           <Link to="/" className="text-lg font-bold">
-//             My Portfolio
-//           </Link>
-//           <div className="space-x-4">
-// <Link to="/" className="link link-hover">Home</Link>
-// <Link to="/projects" className="link link-hover">Projects</Link>
-// <Link to="/about" className="link link-hover">About</Link>
-//           </div>
-//         </div>
-//       </div>
-//     </nav>
-//   );
-// };
-
-// export default Navbar;
-// import { Link } from "react-router-dom";
-
-
+import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { motion } from "framer-motion";
 import ResumeButton from "./ResumeButton";
 import { useTheme } from "../providder/ThemeContext";
-// import ResumeButton from "./ResumeButton";
 
 const Navbar = () => {
+  const { theme, toggleTheme } = useTheme();
+  const [mobileOpen, setMobileOpen] = useState(false);
 
-   const { theme, toggleTheme } = useTheme();
+  const navItems = [
+    { name: "About", path: "/about" },
+    { name: "Skills", path: "/skills" },
+    { name: "Projects", path: "/projects" },
+    { name: "Education", path: "/education" },
+    { name: "Contact", path: "/contact" },
+  ];
+
+  const renderNavLinks = (isMobile = false) =>
+    navItems.map((item) => (
+      <NavLink
+        key={item.name}
+        to={item.path}
+        className={({ isActive }) =>
+          `${
+            isActive
+              ? "text-primary  font-semibold border-b-2 border-primary"
+              : "text-gray-600 dark:text-gray-300 hover:text-primary"
+          } transition-colors  px-3 py-1 rounded ${isMobile ? "block" : "inline-block"}`
+        }
+        onClick={() => isMobile && setMobileOpen(false)}
+      >
+        {item.name}
+      </NavLink>
+    ));
+
   return (
-    <div className="navbar bg-base-100 shadow-sm sticky top-0 z-50">
-      <div className="flex-1 px-4 md:px-8">
-        <Link to="/" className="text-xl font-bold">Najmus Sakib</Link>
-      </div>
+    <nav className="fixed top-0 left-0 w-full z-50 bg-base-100 shadow-md backdrop-blur-md bg-opacity-90 dark:bg-opacity-90 transition-all">
+      <div className="max-w-7xl mx-auto flex justify-between items-center px-6 md:px-10 py-3">
+        {/* Logo */}
+        <Link to="/" className="text-2xl font-bold text-primary">
+          Najmus Sakib
+        </Link>
 
-      <div className="hidden md:block">
-        <div className="flex  items-center space-x-1 md:space-x-2">
-          <div className="flex items-center bg-gray-300 dark:bg-gray-700 rounded-full md:p-0.5 transition-colors">
+        {/* Desktop Menu */}
+        <div className="hidden md:flex items-center space-x-6">
+          {renderNavLinks()}
+
+          {/* Resume Button */}
+          <ResumeButton />
+
+          {/* Theme Switch */}
+          <div className="flex items-center gap-2 bg-gray-200 dark:bg-gray-700 rounded-full p-1">
             <button
-              onClick={() => toggleTheme('light')}
-              className={`md:p-1 rounded-full transition-colors ${theme === 'light'
-                ? 'bg-base-100 text-yellow-600'
-                : 'text-gray-600 dark:text-gray-300'
-                }`}
+              onClick={() => toggleTheme("light")}
+              className={`rounded-full p-2 transition ${
+                theme === "light"
+                  ? "bg-base-100 text-yellow-500"
+                  : "text-gray-600 dark:text-gray-300"
+              }`}
               aria-label="Switch to light mode"
             >
-              <span className="text-base md:text-xl">☀️</span>
+              ☀️
             </button>
-
             <button
-              onClick={() => toggleTheme('dark')}
-              className={`md:p-1 rounded-full transition-colors ${theme === 'dark'
-                ? 'bg-indigo-100 text-indigo-500'
-                : 'text-gray-600 dark:text-gray-300'
-                }`}
+              onClick={() => toggleTheme("dark")}
+              className={`rounded-full p-2 transition ${
+                theme === "dark"
+                  ? "bg-indigo-100 text-indigo-500"
+                  : "text-gray-600 dark:text-gray-300"
+              }`}
               aria-label="Switch to dark mode"
             >
-              <span className="text-base md:text-xl">🌙</span>
+              🌙
             </button>
           </div>
         </div>
-      </div>
 
-
-      <div className="block md:hidden">
-        <button
-          onClick={toggleTheme}
-          aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
-          className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 shadow-sm dark:shadow-md transition-all duration-300 ease-in-out"
-        >
-          {theme === "dark" ? (
-            <span className="text-lg">☀️</span>
-          ) : (
-            <span className="text-lg">🌙</span>
-          )}
-        </button>
-      </div>
-
-      <div className="flex-none px-4">
-        <div className="menu space-x-4 menu-horizontal hidden md:flex">
-          <Link to="/about" className="link link-hover">About</Link>
-          <Link to="/skills" className="link link-hover">Skills</Link>
-          <Link to="/projects" className="link link-hover">Projects</Link>
-          <Link to="/education" className="link link-hover">Education</Link>
-          <Link to="/contact" className="link link-hover">Contact</Link>
-
-          {/* <li><a href="#about">About</a></li> */}
-          {/* <li><a href="#skills">Skills</a></li> */}
-          {/* <li><a href="#education">Education</a></li> */}
-          {/* <li><a href="#projects">Projects</a></li> */}
-          {/* <li><NavLink to="/contact">Contact</NavLink></li> */}
-        </div>
-        {/* <div className="ml-3 hidden md:inline-block">
-          <ResumeButton />
-        </div> */}
-
-        {/* mobile menu */}
-        <div className="dropdown md:hidden">
-          <label tabIndex={0} className="link link-hover btn-circle">
+        {/* Mobile Menu Button */}
+        <div className="md:hidden flex items-center gap-3">
+          <button
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className="text-2xl p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 transition"
+          >
             ☰
-          </label>
-          <div tabIndex={0} className="menu space-x-2.5 menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-            <Link to="/about" className="link link-hover">About</Link>
-            <Link to="/skills" className="link link-hover">Skills</Link>
-            <Link to="/projects" className="link link-hover">Projects</Link>
-            <Link to="/education" className="link link-hover">Education</Link>
-            <Link to="/contact" className="link link-hover">Contact</Link>
-          </div>
+          </button>
+
+          {/* Mobile Theme Toggle */}
+          <button
+            onClick={() => toggleTheme(theme === "dark" ? "light" : "dark")}
+            className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 shadow-md transition-all"
+          >
+            {theme === "dark" ? "☀️" : "🌙"}
+          </button>
         </div>
       </div>
-    </div>
+
+      {/* Mobile Dropdown */}
+      {mobileOpen && (
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3 }}
+          className="md:hidden bg-base-100 dark:bg-gray-900 shadow-lg rounded-b-lg"
+        >
+          <div className="flex flex-col items-start p-4 space-y-2">{renderNavLinks(true)}</div>
+        </motion.div>
+      )}
+    </nav>
   );
 };
+
 export default Navbar;

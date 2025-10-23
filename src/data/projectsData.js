@@ -1,89 +1,58 @@
-// // src/data/projectsData.js
-
-// export const projects = [
-//   {
-//     id: 1,
-//     title: "eduCircle",
-//     description:
-//       "An assignment submission and evaluation platform where students can upload work and evaluators can give feedback and marks.",
-//     tech: ["React", "Firebase", "Tailwind CSS"],
-//     image: "https://ibb.co.com/Lddz0VmF", // put image in public/images folder
-//     liveLink: "https://your-educircle-demo.vercel.app",
-//     codeLink: "https://github.com/yourusername/educircle",
-//   },
-//   {
-//     id: 2,
-//     title: "Event Explorer",
-//     description:
-//       "A beginner-friendly event discovery app with a slider, upcoming events section, and Firebase authentication.",
-//     tech: ["React", "React Router", "Firebase"],
-//     image: "https://ibb.co.com/GvzdLbD1",
-//     liveLink: "https://your-eventexplorer-demo.vercel.app",
-//     codeLink: "https://github.com/yourusername/event-explorer",
-//   },
-//   {
-//     id: 3,
-//     title: "Parcel Delivery App",
-//     description:
-//       "A parcel management web app with cost calculation and form validation using React Hook Form and DaisyUI.",
-//     tech: ["React", "React Hook Form", "Tailwind CSS"],
-//     image: "https://ibb.co.com/8DNnDQ85",
-//     liveLink: "https://your-parcelapp-demo.vercel.app",
-//     codeLink: "https://github.com/yourusername/parcel-delivery",
-//   },
-// ];
-
-
 export const projects = [
   {
     id: 1,
     title: "eduCircle",
-    image: "../../public/23186849_6737457.jpg",
-    description: "Assignment submission and evaluation platform with student uploads, grading, and feedback.",
+    image: "https://i.ibb.co.com/7Jt7TXqS/Screenshot-2025-10-23-025813.png",
+    description:
+      "An assignment submission and evaluation platform enabling students to submit work and evaluators to provide feedback and grades in real time.",
     tech: ["React", "Firebase", "Tailwind CSS"],
-    liveLink: "https://your-educircle-demo.vercel.app",
-    codeLink: "https://github.com/yourusername/educircle-client",
+    liveLink: "https://edu-circle-admin.web.app/",
+    codeLink: "https://github.com/najmussakib2142/edu-circle-client",
     challenges: [
-      "Designing a secure file upload and storage flow with Firebase Storage.",
-      "Synchronizing evaluator feedback and real-time status updates."
+      "Designing a secure file upload and storage flow using Firebase Storage.",
+      "Implementing evaluator feedback synchronization and live status updates.",
     ],
     improvements: [
-      "Add role-based access control and admin dashboard.",
-      "Improve UI for mobile grading workflow; add offline draft support."
-    ]
+      "Add role-based access control and a full-featured admin dashboard.",
+      "Introduce offline submission drafts and mobile-optimized evaluation tools.",
+    ],
   },
+
   {
     id: 2,
-    title: "Event Explorer",
-    image: "../../public/artem-beliaikin-D3sOgDBTLTU-unsplash.jpg",
-    description: "Event discovery app with filters, slider, and Firebase authentication.",
-    tech: ["React", "React Router", "Firebase"],
-    liveLink: "https://your-eventexplorer-demo.vercel.app",
-    codeLink: "https://github.com/yourusername/event-explorer-client",
+    title: "Explore BD",
+    image: "https://i.ibb.co.com/mCQ22Lkf/Screenshot-2025-10-23-025141.png",
+    description:
+      "A tourism discovery platform showcasing destinations across Bangladesh with maps, packages, stories, and booking options.",
+    tech: ["React", "React Router", "Tailwind CSS", "Framer Motion"],
+    liveLink: "https://explore-bd-admin.web.app/",
+    codeLink: "https://github.com/najmussakib2142/explore-bd-client",
     challenges: [
-      "Implementing smooth transitions between filtered event lists.",
-      "Balancing performance while loading event images."
+      "Integrating responsive map components for regional exploration.",
+      "Ensuring smooth UI transitions and optimized image loading.",
     ],
     improvements: [
-      "Add tagging & search, save favorite events, and pagination."
-    ]
+      "Add search and filter features for tours.",
+      "Include a review system and user-generated stories.",
+    ],
   },
+
   {
     id: 3,
-    title: "Parcel Delivery App",
-    image: "../../public/Transit warehouse.png",
-    description: "Parcel booking and cost calculation system with validation using React Hook Form.",
-    tech: ["React", "React Hook Form", "Tailwind CSS"],
-    liveLink: "https://your-parcelapp-demo.vercel.app",
-    codeLink: "https://github.com/yourusername/parcel-delivery-client",
+    title: "Hobby Hub",
+    image: "https://i.ibb.co.com/8Dd697YW/Screenshot-2025-10-23-035404.png",
+    description:
+      "A social platform where users can share hobbies, join interest-based communities, and connect with like-minded individuals.",
+    tech: ["React", "Firebase Auth", "Tailwind CSS", "DaisyUI"],
+    liveLink: "https://hobby-hub-discovery.web.app",
+    codeLink: "https://github.com/najmussakib2142/hobby-hub-client",
     challenges: [
-      "Accurate cost calculation across multiple inputs and edge cases.",
-      "Designing intuitive form flow for sender/receiver details."
+      "Building an authentication system for user profiles and posts.",
+      "Managing community feeds and ensuring smooth image upload handling.",
     ],
     improvements: [
-      "Add admin tracking dashboard and shipment history.",
-      "Integrate third-party courier APIs for live rates."
-    ]
-  }
+      "Add messaging features and group events.",
+      "Enable post moderation and hobby-based recommendations.",
+    ],
+  },
 ];
-

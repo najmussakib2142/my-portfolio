@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import { FaGithub, FaLinkedin, FaFacebook, FaEnvelope } from "react-icons/fa";
+import { Link, NavLink } from "react-router-dom";
+import { FaGithub, FaLinkedin, FaFacebook, FaEnvelope, FaWhatsapp } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -7,21 +7,21 @@ const Footer = () => {
       <div className="container mx-auto px-6 flex flex-col items-center gap-6 text-center">
         {/* Navigation Links */}
         <nav className="flex flex-wrap justify-center gap-6 text-sm font-medium">
-          <Link to="/about" className="hover:text-primary transition-colors">
+          <NavLink to="/about" className="hover:text-primary transition-colors">
             About
-          </Link>
-          <Link to="/projects" className="hover:text-primary transition-colors">
+          </NavLink>
+          <NavLink  Link to="/projects" className="hover:text-primary transition-colors">
             Projects
-          </Link>
-          <Link to="/contact" className="hover:text-primary transition-colors">
+          </NavLink>
+          <NavLink to="/contact" className="hover:text-primary transition-colors">
             Contact
-          </Link>
+          </NavLink>
         </nav>
 
         {/* Social Links */}
         <div className="flex gap-5 text-lg">
           <a
-            href="https://github.com/"
+            href="https://github.com/najmussakib2142"
             target="_blank"
             rel="noreferrer"
             className="hover:text-primary transition-transform transform hover:scale-110"
@@ -29,23 +29,26 @@ const Footer = () => {
             <FaGithub />
           </a>
           <a
-            href="https://linkedin.com/"
+            href="https://www.linkedin.com/in/sm-najmus-sakib"
             target="_blank"
             rel="noreferrer"
             className="hover:text-primary transition-transform transform hover:scale-110"
           >
             <FaLinkedin />
           </a>
+          <div className="flex items-center ">
+            <FaWhatsapp className="" />
+            <a
+              href="https://wa.me/8801736007474"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:underline"
+            >
+             
+            </a>
+          </div>
           <a
-            href="https://facebook.com/"
-            target="_blank"
-            rel="noreferrer"
-            className="hover:text-primary transition-transform transform hover:scale-110"
-          >
-            <FaFacebook />
-          </a>
-          <a
-            href="mailto:najmus.sakib@example.com"
+            href="mailto:najmussakib2142@gmail.com"
             className="hover:text-primary transition-transform transform hover:scale-110"
           >
             <FaEnvelope />
@@ -65,3 +68,9 @@ const Footer = () => {
 };
 
 export default Footer;
+
+// { Icon: FaGithub, link: "https://github.com/najmussakib2142" },
+// { Icon: FaLinkedin, link: "https://www.linkedin.com/in/sm-najmus-sakib" },
+// { Icon: FaWhatsapp, link: "https://wa.me/8801736007474" },].map(({ Icon, link }, idx) => (
+// { Icon: FaEnvelope, link: "mailto:najmussakib2142@gmail.com" },
+
