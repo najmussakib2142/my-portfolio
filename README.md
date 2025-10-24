@@ -2,7 +2,7 @@
 
 Welcome to my personal portfolio! This is a modern, responsive, and interactive web application built with **React**, **Tailwind CSS**, **DaisyUI**, **Framer Motion**, and **AOS animations**.
 
-Live demo: [[https://najmuss-portfolio.netlify.app/](https://najmuss-portfolio.netlify.app/)](https://my-portfolio-sm-sakib.vercel.app/)
+Live demo: (https://my-portfolio-sm-sakib.vercel.app/)
 
 ---
 
