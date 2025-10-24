@@ -2,7 +2,8 @@
 
 Welcome to my personal portfolio! This is a modern, responsive, and interactive web application built with **React**, **Tailwind CSS**, **DaisyUI**, **Framer Motion**, and **AOS animations**.
 
-Live demo: (https://my-portfolio-sm-sakib.vercel.app/)
+**Live Demo:** [my-portfolio-sm-sakib.vercel.app ↗](https://my-portfolio-sm-sakib.vercel.app/)
+
 
 ---
 
