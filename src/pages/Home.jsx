@@ -27,15 +27,13 @@ const Home = () => {
 
 
   return (
-    <div className="min-h-screen max-w-7xl mx-auto bg-base-100 text-center">
+    <div className="min-h-screen max-w-7xl mx-auto text-center">
       <Hero></Hero>
       {/* <About></About> */}
-      {/* <Education></Education> */}
       <ToolsSliderSection></ToolsSliderSection>
       <Skills></Skills>
       <Education></Education>
       <Projects></Projects>
-      {/* <Skills></Skills> */}
       <Contact></Contact>
 
       {showTopBtn && (

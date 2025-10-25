@@ -3,6 +3,14 @@ import { motion } from "framer-motion";
 import { FaExternalLinkAlt, FaGithub, FaArrowLeft } from "react-icons/fa";
 import { projects } from "../../data/projectsData";
 
+// LightGallery imports
+import LightGallery from "lightgallery/react";
+import lgZoom from "lightgallery/plugins/zoom";
+import lgThumbnail from "lightgallery/plugins/thumbnail";
+import "lightgallery/css/lightgallery.css";
+import "lightgallery/css/lg-zoom.css";
+import "lightgallery/css/lg-thumbnail.css";
+
 const ProjectDetails = () => {
   const { id } = useParams();
   const project = projects.find((p) => p.id === Number(id));
@@ -14,9 +22,12 @@ const ProjectDetails = () => {
       </div>
     );
 
+  // Ensure images array exists for LightGallery
+  const galleryImages = project.images || [project.image];
+
   return (
     <motion.div
-      className="pt-20 container mx-auto px-6 pb-24"
+      className=" pt-8 max-w-7xl container mx-auto px-8 md:px-14 pb-24"
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
@@ -30,15 +41,22 @@ const ProjectDetails = () => {
         {project.title}
       </motion.h1>
 
-      {/* Image */}
-      <motion.img
-        src={project.image}
-        alt={project.title}
-        className="w-full max-h-[450px] object-cover rounded-2xl shadow-md mb-8 border border-gray-200 dark:border-gray-700"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.2 }}
-      />
+      {/* LightGallery */}
+      <LightGallery
+        speed={500}
+        plugins={[lgZoom, lgThumbnail]}
+        elementClassNames="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8"
+      >
+        {galleryImages.map((img, idx) => (
+          <a key={idx} href={img} className="block rounded overflow-hidden">
+            <img
+              src={img}
+              alt={`${project.title} screenshot ${idx + 1}`}
+              className="w-full h-48 object-cover rounded-lg shadow-md hover:scale-105 transition-transform"
+            />
+          </a>
+        ))}
+      </LightGallery>
 
       {/* Description */}
       <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-8 text-lg">
@@ -111,10 +129,10 @@ const ProjectDetails = () => {
         </a>
 
         <Link
-          to="/projects"
+          to="/"
           className="flex items-center gap-2 btn bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 border-none transition"
         >
-          <FaArrowLeft /> Back to Projects
+          <FaArrowLeft /> Back to Home
         </Link>
       </div>
     </motion.div>

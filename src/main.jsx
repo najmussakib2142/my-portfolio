@@ -14,12 +14,15 @@ AOS.init({
   once: true, // Animate only once
   easing: "ease-in-out",
 });
-
+import { Toaster } from "react-hot-toast";
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <ThemeProvider>
-      <RouterProvider router={router} />
-    </ThemeProvider>
+    <div className='font-roboto'>
+      <ThemeProvider>
+        <RouterProvider router={router} />
+        <Toaster position="top-right" reverseOrder={false} />
+      </ThemeProvider>
+    </div>
   </StrictMode>,
 )

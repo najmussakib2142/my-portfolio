@@ -10,18 +10,48 @@ import { SiTailwindcss, SiFirebase, SiVite } from "react-icons/si";
 import { FaGraduationCap, FaCertificate } from "react-icons/fa";
 import ProjectCard from "../../components/ProjectCard";
 
+
 const Hero = () => {
-    
+
+    const forceDownload = async () => {
+        try {
+            const res = await fetch("/my-resume.pdf", { cache: "no-cache" });
+            if (!res.ok) throw new Error("Network response was not ok");
+            const blob = await res.blob();
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = "Najmus-Sakib-CV.pdf"; // filename the user will get
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+            window.URL.revokeObjectURL(url);
+        } catch (err) {
+            console.error("Download failed:", err);
+            // fallback: open in new tab so user can right-click -> save
+            window.open("/my-resume.pdf", "_blank", "noopener,noreferrer");
+        }
+    };
+
+
     return (
         <div className="font-roboto overflow-hidden">
             {/* HERO SECTION */}
             <section
-                className="relative flex flex-col md:flex-row items-center justify-center px-6 md:px-16 py-24 gap-12 overflow-hidden"
+                className="relative  flex flex-col md:flex-row items-center justify-center px-6 md:px-16 py-24 gap-12 overflow-hidden"
                 data-aos="fade-up"
             >
-                {/* --- Background Glow --- */}
-                <div className="absolute -z-10 top-0 left-0 w-72 h-72 bg-primary/10 blur-3xl rounded-full"></div>
-                <div className="absolute -z-10 bottom-0 right-0 w-80 h-80 bg-secondary/10 blur-3xl rounded-full"></div>
+                {/* --- Animated Background Glow --- */}
+                <motion.div
+                    animate={{ scale: [1, 1.2, 1], opacity: [0.5, 0.8, 0.5] }}
+                    transition={{ duration: 6, repeat: Infinity }}
+                    className="absolute -z-10 top-0 left-0 w-72 h-72 bg-primary/10 blur-3xl rounded-full"
+                ></motion.div>
+                <motion.div
+                    animate={{ scale: [1, 1.3, 1], opacity: [0.4, 0.7, 0.4] }}
+                    transition={{ duration: 7, repeat: Infinity }}
+                    className="absolute -z-10 bottom-0 right-0 w-80 h-80 bg-secondary/10 blur-3xl rounded-full"
+                ></motion.div>
 
                 {/* --- Left Text Section --- */}
                 <motion.div
@@ -49,23 +79,26 @@ const Hero = () => {
                         >
                             🚀 View Projects
                         </a>
-
                         <a
-                            href="/cv.pdf"
+                            href="https://drive.google.com/file/d/1FyPK7lkl5Mm-EjoVHerNo_y8aOjxkYpL/view"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="btn bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:opacity-90"
+                            className="btn cursor-pointer bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:opacity-90"
                         >
                             View CV
                         </a>
-
-                        <a
-                            href="/cv.pdf"
-                            download
-                            className="btn bg-gradient-to-r from-green-500 to-emerald-600 text-white hover:opacity-90"
+                        <button
+                            onClick={forceDownload}
+                            className="btn cursor-pointer bg-gradient-to-r from-green-500 to-emerald-600 text-white hover:opacity-90 relative z-50 pointer-events-auto"
                         >
                             Download CV
-                        </a>
+                        </button>
+
+
+
+
+
+
                     </div>
 
                     {/* --- Social Icons --- */}
@@ -73,51 +106,97 @@ const Hero = () => {
                         {[
                             { Icon: FaGithub, link: "https://github.com/najmussakib2142" },
                             { Icon: FaLinkedin, link: "https://www.linkedin.com/in/sm-najmus-sakib" },
-                            { Icon: FaWhatsapp, link: "https://wa.me/8801736007474" },].map(({ Icon, link }, idx) => (
+                            { Icon: FaWhatsapp, link: "https://wa.me/8801736007474" },
                             { Icon: FaEnvelope, link: "mailto:najmussakib2142@gmail.com" },
-                                <motion.a
-                                    key={idx}
-                                    whileHover={{ scale: 1.25, rotate: 5 }}
-                                    whileTap={{ scale: 0.9 }}
-                                    href={link}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-gray-600 dark:text-gray-300 hover:text-primary transition-colors"
-                                >
-                                    <Icon />
-                                </motion.a>
-                            ))}
+                        ].map(({ Icon, link }, idx) => (
+                            <motion.a
+                                key={idx}
+                                whileHover={{ scale: 1.25, rotate: 5 }}
+                                whileTap={{ scale: 0.9 }}
+                                href={link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-gray-600 dark:text-gray-300 hover:text-primary transition-colors"
+                            >
+                                <Icon />
+                            </motion.a>
+                        ))}
                     </div>
                 </motion.div>
 
-                {/* --- Right Image --- */}
+                {/* --- Right Image Section --- */}
                 <motion.div
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 0.3, duration: 0.8 }}
                     className="flex-1 flex justify-center md:justify-end"
                 >
-                    <div className="relative group">
-                        {/* Glow ring animation */}
-                        <div className="absolute -inset-2 bg-gradient-to-r from-primary to-secondary rounded-full blur-lg opacity-70 group-hover:opacity-100 transition duration-500"></div>
+                    <motion.div
+                        animate={{ y: [0, -10, 0] }}
+                        transition={{ duration: 4, repeat: Infinity }}
+                        className="relative group"
+                    >
+                        {/* Animated glow ring */}
+                        <div className="absolute -inset-2 bg-gradient-to-r from-primary to-secondary rounded-full blur-lg opacity-60 group-hover:opacity-100 transition duration-500"></div>
 
-                        <img
-                            src="https://i.ibb.co/mCsF003L/Chat-GPT-Image-Sep-6-2025-11-02-32-PM.png"
-                            alt="Najmus Sakib"
-                            className="relative w-56 h-56 md:w-80 md:h-80 object-cover rounded-full shadow-2xl border-4 border-white dark:border-gray-700 transition-transform duration-500 group-hover:scale-105"
-                        />
-                    </div>
+                        <div className="relative w-56 h-56 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white dark:border-gray-700 shadow-2xl">
+                            {/* Dim and overlay the image */}
+                            <img
+                                src="https://i.ibb.co/mCsF003L/Chat-GPT-Image-Sep-6-2025-11-02-32-PM.png"
+                                alt="Najmus Sakib"
+                                className="object-cover w-full h-full brightness-80 contrast-100 transition duration-500 group-hover:brightness-90"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-40 group-hover:opacity-20 transition-opacity"></div>
+                        </div>
+                    </motion.div>
                 </motion.div>
             </section>
 
             {/* ABOUT SECTION */}
-            <section id="about" className="py-20 px-6 md:px-16 bg-base-100"> <div className="container mx-auto max-w-4xl text-center md:text-left"> <h2 className="text-3xl font-bold mb-4 text-primary">About Me</h2> <p className="text-gray-700 dark:text-gray-300 leading-relaxed"> I started learning web development out of curiosity — fascinated by how websites function behind the scenes. Over time, I’ve become passionate about crafting engaging user experiences with clean, modern UI and efficient code. Outside of programming, I enjoy football, sketching, and reading technology blogs — keeping both my creativity and curiosity alive. </p> </div> </section>
+            <section
+                id="about"
+                className="py-24 px-6 md:px-16  transition-colors duration-500"
+                data-aos="fade-up"
+            >
+                <div className="container mx-auto max-w-4xl text-center md:text-left">
+                    {/* Heading */}
+                    <h2 className="text-4xl font-bold mb-6 text-primary tracking-wide">
+                        About Me
+                    </h2>
+
+                    {/* Description */}
+                    <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-lg mb-6">
+                        My journey into <span className="text-primary font-semibold">web development</span> began from simple curiosity —
+                        wondering how websites truly work behind the scenes. Over time, this curiosity grew into a deep passion for
+                        crafting <span className="text-primary font-semibold">intuitive user interfaces</span> and writing clean,
+                        efficient code.
+                        <br />
+                        <br />
+                        When I’m not coding, I enjoy <span className="text-primary font-medium">football</span>, tending to my
+                        <span className="text-primary font-medium"> garden</span>, and exploring new books — keeping both creativity and
+                        curiosity alive.
+                    </p>
+
+                    {/* Skills Badges */}
+                    <div className="flex flex-wrap justify-center md:justify-start gap-3 mt-6">
+                        {["JavaScript", "React", "Node.js", "Express", "MongoDB", "Tailwind CSS"].map((skill) => (
+                            <span
+                                key={skill}
+                                className="badge badge-lg bg-primary/10 text-primary border border-primary/30 hover:bg-primary hover:text-white transition-all duration-300 cursor-default"
+                            >
+                                {skill}
+                            </span>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
 
             {/* SKILLS SECTION */}
-            
+
 
             {/* EDUCATION SECTION */}
-           
+
             {/* PROJECTS SECTION */}
 
 
@@ -126,7 +205,7 @@ const Hero = () => {
 
 
             {/* SCROLL TO TOP BUTTON */}
-            
+
         </div>
     );
 };

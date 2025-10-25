@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
+import emailjs from "emailjs-com";
 import {
   FaEnvelope,
   FaPhone,
@@ -7,47 +8,69 @@ import {
   FaGithub,
   FaLinkedin,
 } from "react-icons/fa";
+import toast from "react-hot-toast";
 
 const Contact = () => {
   const { register, handleSubmit, reset } = useForm();
 
   const onSubmit = (data) => {
-    console.log("Form Data:", data);
-    alert("Message sent locally — integrate EmailJS or Firebase later!");
-    reset();
+    emailjs
+      .send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        data,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY)
+      .then(
+        () => {
+          toast.success("✅ Message sent successfully!");
+          reset();
+        },
+        (error) => {
+          toast.error("❌ Failed to send message. Please try again later.");
+          console.error("EmailJS error:", error);
+        }
+      );
   };
 
   return (
-    <motion.div
-      className="pt-24 container mx-auto px-6 pb-20"
+    <motion.section
+      id="contact"
+      className="pt-15 pb-20 px-6 md:px-12  transition-colors duration-500"
       initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
     >
-      <h2 className="text-4xl font-bold mb-6 text-gray-900 dark:text-gray-100 text-center">
-        Get In Touch
-      </h2>
-      <p className="text-center text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto">
-        I’m open to internship and freelance opportunities. Reach me directly
-        via email or send a quick message below.
-      </p>
+      {/* Heading */}
+      <div className="text-center mb-12">
+        <h2 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500 mb-4">
+          Get in Touch
+        </h2>
+        <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          I’m always open to discussing new projects, creative ideas, or
+          opportunities to collaborate. Drop a message and let’s connect!
+        </p>
+      </div>
 
-      <div className="grid md:grid-cols-2 gap-10">
-        {/* Contact Info Section */}
+      {/* Contact Grid */}
+      <div className="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto">
+        {/* Contact Info */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
-          animate={{ opacity: 1, x: 0 }}
+          whileInView={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.2 }}
-          className="flex flex-col justify-center"
+          viewport={{ once: true }}
+          className="space-y-5 text-left flex flex-col justify-center"
         >
-          <h3 className="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-4">
+          <h3 className="text-2xl font-semibold text-gray-800 dark:text-gray-100">
             Contact Information
           </h3>
+
           <div className="space-y-4 text-gray-700 dark:text-gray-300">
             <div className="flex items-center gap-3">
               <FaEnvelope className="text-blue-500" />
               <a
-                href="mailto:najmus.sakib@example.com"
+                href="mailto:najmussakib2142@gmail.com"
                 className="hover:underline"
               >
                 najmussakib2142@gmail.com
@@ -67,12 +90,12 @@ const Contact = () => {
                 rel="noreferrer"
                 className="hover:underline"
               >
-                WhatsApp
+                WhatsApp Chat
               </a>
             </div>
           </div>
 
-          {/* Socials */}
+          {/* Social Links */}
           <div className="flex gap-4 mt-6">
             <a
               href="https://github.com/najmussakib2142"
@@ -96,45 +119,46 @@ const Contact = () => {
         {/* Contact Form */}
         <motion.form
           onSubmit={handleSubmit(onSubmit)}
-          className="bg-white/70 dark:bg-gray-900/70 backdrop-blur-md border border-gray-200 dark:border-gray-700 rounded-2xl shadow-lg p-6 space-y-5"
           initial={{ opacity: 0, x: 30 }}
-          animate={{ opacity: 1, x: 0 }}
+          whileInView={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.3 }}
+          viewport={{ once: true }}
+          className="bg-white/70 dark:bg-gray-900/70 backdrop-blur-md border border-gray-200 dark:border-gray-700 rounded-2xl shadow-xl p-8 space-y-5"
         >
           <div>
-            <label className="block mb-1 text-gray-800 dark:text-gray-200">
+            <label className="block mb-2 text-gray-800 dark:text-gray-200 font-medium">
               Your Name
             </label>
             <input
               type="text"
               {...register("name", { required: true })}
-              className="w-full input input-bordered bg-transparent dark:bg-gray-800"
+              className="input input-bordered w-full bg-transparent dark:bg-gray-800"
               placeholder="Enter your name"
               required
             />
           </div>
 
           <div>
-            <label className="block mb-1 text-gray-800 dark:text-gray-200">
+            <label className="block mb-2 text-gray-800 dark:text-gray-200 font-medium">
               Email
             </label>
             <input
               type="email"
               {...register("email", { required: true })}
-              className="w-full input input-bordered bg-transparent dark:bg-gray-800"
+              className="input input-bordered w-full bg-transparent dark:bg-gray-800"
               placeholder="Enter your email"
               required
             />
           </div>
 
           <div>
-            <label className="block mb-1 text-gray-800 dark:text-gray-200">
+            <label className="block mb-2 text-gray-800 dark:text-gray-200 font-medium">
               Message
             </label>
             <textarea
               {...register("message", { required: true })}
+              rows="5"
               className="textarea textarea-bordered w-full bg-transparent dark:bg-gray-800"
-              rows="4"
               placeholder="Write your message..."
               required
             ></textarea>
@@ -142,13 +166,13 @@ const Contact = () => {
 
           <button
             type="submit"
-            className="btn btn-primary w-full mt-3 bg-blue-600 hover:bg-blue-700 text-white border-none shadow-md"
+            className="btn w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white border-none shadow-md transition-transform duration-300 hover:scale-[1.02]"
           >
-            Send Message
+            ✉️ Send Message
           </button>
         </motion.form>
       </div>
-    </motion.div>
+    </motion.section>
   );
 };
 
