@@ -4,11 +4,6 @@ import { Link } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { FaGithub, FaLinkedin, FaFacebook, FaTwitter, FaArrowUp, FaEnvelope, FaWhatsapp } from "react-icons/fa";
-// import { projects } from "../../data/projectsData";
-import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaGitAlt, FaFigma, FaDatabase } from "react-icons/fa";
-import { SiTailwindcss, SiFirebase, SiVite } from "react-icons/si";
-import { FaGraduationCap, FaCertificate } from "react-icons/fa";
-import ProjectCard from "../../components/ProjectCard";
 
 
 const Hero = () => {
@@ -153,43 +148,8 @@ const Hero = () => {
             </section>
 
             {/* ABOUT SECTION */}
-            <section
-                id="about"
-                className="py-24 px-6 md:px-16  transition-colors duration-500"
-                data-aos="fade-up"
-            >
-                <div className="container mx-auto max-w-4xl text-center md:text-left">
-                    {/* Heading */}
-                    <h2 className="text-4xl font-bold mb-6 text-primary tracking-wide">
-                        About Me
-                    </h2>
+            
 
-                    {/* Description */}
-                    <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-lg mb-6">
-                        My journey into <span className="text-primary font-semibold">web development</span> began from simple curiosity —
-                        wondering how websites truly work behind the scenes. Over time, this curiosity grew into a deep passion for
-                        crafting <span className="text-primary font-semibold">intuitive user interfaces</span> and writing clean,
-                        efficient code.
-                        <br />
-                        <br />
-                        When I’m not coding, I enjoy <span className="text-primary font-medium">football</span>, tending to my
-                        <span className="text-primary font-medium"> garden</span>, and exploring new books — keeping both creativity and
-                        curiosity alive.
-                    </p>
-
-                    {/* Skills Badges */}
-                    <div className="flex flex-wrap justify-center md:justify-start gap-3 mt-6">
-                        {["JavaScript", "React", "Node.js", "Express", "MongoDB", "Tailwind CSS"].map((skill) => (
-                            <span
-                                key={skill}
-                                className="badge badge-lg bg-primary/10 text-primary border border-primary/30 hover:bg-primary hover:text-white transition-all duration-300 cursor-default"
-                            >
-                                {skill}
-                            </span>
-                        ))}
-                    </div>
-                </div>
-            </section>
 
 
             {/* SKILLS SECTION */}

@@ -75,6 +75,9 @@ nav a.active {
       /* soft yellow */
     );
 }
+[data-theme="dark"] body {
+  background: #050c17
+}
 
 /* 🌙 Dark Theme */
 [data-theme="dark"] {

@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import Contact from "./Contact/Contact";
-import About from "./Home/About";
 import Education from "./Home/Education";
 import Hero from "./Home/Hero";
 import Skills from "./Home/Skills";
@@ -9,6 +8,8 @@ import ToolsSliderSection from "./ToolsSliderSection/ToolsSliderSection";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { FaArrowUp } from "react-icons/fa";
+import About from "./Home/About";
+import ServicesSection from "./Home/ServicesSection";
 
 
 const Home = () => {
@@ -29,8 +30,9 @@ const Home = () => {
   return (
     <div className="min-h-screen max-w-7xl mx-auto text-center">
       <Hero></Hero>
-      {/* <About></About> */}
+      <About></About>
       <ToolsSliderSection></ToolsSliderSection>
+      <ServicesSection></ServicesSection>
       <Skills></Skills>
       <Education></Education>
       <Projects></Projects>

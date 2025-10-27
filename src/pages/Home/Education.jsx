@@ -6,7 +6,7 @@ const Education = () => {
   return (
     <section
       id="education"
-      className="py-20 px-6 md:px-16  relative overflow-hidden transition-colors duration-500"
+      className="py-20 px-6 md:px-16 relative overflow-hidden transition-colors duration-500"
     >
       {/* Decorative circles */}
       {/* <div className="absolute -top-16 -left-16 w-40 h-40 bg-indigo-200 dark:bg-indigo-900 rounded-full opacity-10 blur-2xl animate-pulse"></div> */}

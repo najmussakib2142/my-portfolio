@@ -48,7 +48,7 @@ const Skills = () => {
             {/* <div className="absolute -top-20 -left-20 w-72 h-72 bg-purple-300/30 dark:bg-purple-700/30 rounded-full blur-3xl animate-spin-slow pointer-events-none"></div> */}
             {/* <div className="absolute -bottom-16 right-10 w-60 h-60 bg-indigo-300/20 dark:bg-indigo-800/20 rounded-full blur-2xl animate-pulse pointer-events-none"></div> */}
 
-            <div className="container mx-auto px-6 md:px-16 text-center md:text-left relative z-10">
+            <div className="container mx-auto px-6  text-center md:text-left relative z-10">
                 {/* Section Header */}
                 <motion.div
                     initial={{ opacity: 0, y: -40 }}
@@ -64,7 +64,7 @@ const Skills = () => {
                 </motion.div>
 
                 {/* Skill Categories */}
-                <div className="grid md:grid-cols-3 gap-10">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {/* Frontend */}
                     <motion.div
                         className="p-6 rounded-xl bg-white/70 dark:bg-gray-800/70 shadow-lg backdrop-blur-lg"
@@ -140,7 +140,7 @@ const Skills = () => {
                         <h3 className="text-xl font-semibold mb-5 text-primary">
                             Professional Strengths
                         </h3>
-                        <div className="flex flex-wrap gap-3 justify-center md:justify-start">
+                        <div className="flex flex-wrap overflow-x-auto gap-3 justify-center md:justify-start">
                             {skillsData.softSkills.map((skill) => (
                                 <motion.span
                                     key={skill}
