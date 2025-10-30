@@ -44,61 +44,37 @@ const Navbar = () => {
           {renderNavLinks()}
 
           {/* --- Theme Switch --- */}
-          <div className="flex items-center gap-2 bg-gray-200 dark:bg-gray-700 rounded-full p-0.5">
-            <button
-              onClick={() => toggleTheme("light")}
-              className={`rounded-full p-1 transition ${theme === "light"
-                ? "bg-base-100 text-yellow-500"
-                : "text-gray-600 dark:text-gray-300"
-                }`}
-              aria-label="Switch to light mode"
-            >
-              ☀️
-            </button>
-            <button
-              onClick={() => toggleTheme("dark")}
-              className={`rounded-full p-1 transition ${theme === "dark"
-                ? "bg-indigo-100 text-indigo-500"
-                : "text-gray-600 dark:text-gray-300"
-                }`}
-              aria-label="Switch to dark mode"
-            >
-              🌙
-            </button>
+          <div className="hidden">
+            <div className="flex items-center gap-2 bg-gray-200 dark:bg-gray-700 rounded-full p-0.5">
+              <button
+                onClick={() => toggleTheme("light")}
+                className={`rounded-full p-1 transition ${theme === "light"
+                  ? "bg-base-100 text-yellow-500"
+                  : "text-gray-600 dark:text-gray-300"
+                  }`}
+                aria-label="Switch to light mode"
+              >
+                ☀️
+              </button>
+              <button
+                onClick={() => toggleTheme("dark")}
+                className={`rounded-full p-1 transition ${theme === "dark"
+                  ? "bg-indigo-100 text-indigo-500"
+                  : "text-gray-600 dark:text-gray-300"
+                  }`}
+                aria-label="Switch to dark mode"
+              >
+                🌙
+              </button>
+            </div>
           </div>
         </div>
 
         {/* --- Mobile Menu --- */}
         <div className="md:hidden flex items-center gap-">
-          {/* <button
-            onClick={() => toggleTheme(theme === "dark" ? "light" : "dark")}
-            className="w-8 h-8 flex items-center justify-center rounded-full border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 shadow-md transition-all"
-          >
-            {theme === "dark" ? "☀️" : "🌙"}
-          </button> */}
 
-          <div className="flex items-center gap-2 bg-gray-200 dark:bg-gray-700 rounded-full p-0.5">
-            <button
-              onClick={() => toggleTheme("light")}
-              className={`rounded-full p-1 transition ${theme === "light"
-                ? "bg-base-100 text-yellow-500"
-                : "text-gray-600 dark:text-gray-300"
-                }`}
-              aria-label="Switch to light mode"
-            >
-              ☀️
-            </button>
-            <button
-              onClick={() => toggleTheme("dark")}
-              className={`rounded-full p-1 transition ${theme === "dark"
-                ? "bg-indigo-100 text-indigo-500"
-                : "text-gray-600 dark:text-gray-300"
-                }`}
-              aria-label="Switch to dark mode"
-            >
-              🌙
-            </button>
-          </div>
+
+          {/* <div className="hidden"></div> */}
 
           <button
             onClick={() => setMobileOpen(!mobileOpen)}

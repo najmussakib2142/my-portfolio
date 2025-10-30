@@ -43,7 +43,7 @@ export const projects = [
     image: "https://i.ibb.co.com/8Dd697YW/Screenshot-2025-10-23-035404.png",
     description:
       "A social platform where users can share hobbies, join interest-based communities, and connect with like-minded individuals.",
-    tech: ["React", "Firebase Auth", "Tailwind CSS", "DaisyUI"],
+    tech: ["React", "Firebase", "Tailwind CSS", "DaisyUI"],
     liveLink: "https://hobby-hub-discovery.web.app",
     codeLink: "https://github.com/najmussakib2142/hobby-hub-client",
     challenges: [

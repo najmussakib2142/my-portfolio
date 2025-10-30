@@ -1,5 +1,7 @@
 import React from 'react';
 import { FaEnvelope, FaGithub, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
+import { motion } from "framer-motion";
+
 
 const About = () => {
     return (
@@ -87,7 +89,7 @@ const About = () => {
                                     { Icon: FaWhatsapp, link: "https://wa.me/8801736007474" },
                                     { Icon: FaEnvelope, link: "mailto:najmussakib2142@gmail.com" },
                                 ].map(({ Icon, link }, idx) => (
-                                    <a
+                                    <motion.a
                                         key={idx}
                                         whileHover={{ scale: 1.25, rotate: 5 }}
                                         whileTap={{ scale: 0.9 }}
@@ -97,9 +99,10 @@ const About = () => {
                                         className="text-gray-600 dark:text-gray-300 hover:text-primary transition-colors"
                                     >
                                         <Icon />
-                                    </a>
+                                    </motion.a>
                                 ))}
-                            </div>                        </div>
+                            </div>
+                        </div>
 
                     </div>
 

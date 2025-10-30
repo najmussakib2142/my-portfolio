@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import Contact from "./Contact/Contact";
 import Education from "./Home/Education";
 import Hero from "./Home/Hero";
@@ -10,25 +10,26 @@ import "aos/dist/aos.css";
 import { FaArrowUp } from "react-icons/fa";
 import About from "./Home/About";
 import ServicesSection from "./Home/ServicesSection";
+import ScrollProgressButton from "./Shared/ScrollProgressButton";
 
 
 const Home = () => {
 
-  const [showTopBtn, setShowTopBtn] = useState(false);
+  // const [showTopBtn, setShowTopBtn] = useState(false);
 
-  useEffect(() => {
-    AOS.init({ duration: 1000, once: true, easing: "ease-in-out" });
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 300) setShowTopBtn(true);
-      else setShowTopBtn(false);
-    });
-  }, []);
+  // useEffect(() => {
+  //   AOS.init({ duration: 1000, once: true, easing: "ease-in-out" });
+  //   window.addEventListener("scroll", () => {
+  //     if (window.scrollY > 300) setShowTopBtn(true);
+  //     else setShowTopBtn(false);
+  //   });
+  // }, []);
 
-  const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
+  // const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
 
   return (
-    <div className="min-h-screen max-w-7xl mx-auto text-center">
+    <div className="max-w-7xl mx-auto text-center">
       <Hero></Hero>
       <About></About>
       <ToolsSliderSection></ToolsSliderSection>
@@ -38,14 +39,15 @@ const Home = () => {
       <Projects></Projects>
       <Contact></Contact>
 
-      {showTopBtn && (
+      <ScrollProgressButton></ScrollProgressButton>
+      {/* {showTopBtn && (
         <button
           onClick={scrollToTop}
           className="fixed cursor-pointer bottom-6 right-6 p-3 rounded-full bg-primary text-white shadow-lg hover:bg-primary-focus transition"
         >
           <FaArrowUp />
         </button>
-      )}
+      )} */}
 
     </div>
   );

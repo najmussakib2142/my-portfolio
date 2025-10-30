@@ -65,13 +65,42 @@ const services = [
 
 const ServicesSection = () => {
     return (
-        <section className="py-24 px-6 md:px-16 bg-gradient-to-b from-[#0e151f] to-[#060d18] text-gray-200 transition-colors duration-500">
+        // <section className="py-24 px-6 md:px-16 bg-gradient-to-b from-[#0e151f] to-[#060d18] text-gray-200 transition-colors duration-500">
+        //     <div className="text-center mb-16">
+        //         <h2 className="text-4xl font-bold mb-4 text-white">Services I Offer</h2>
+        //         {/* <h2 className="text-4xl font-bold mb-4 text-white text-center md:text-left">
+        //             What I Can Build For You
+        //         </h2> */}
+        //         <p className="text-gray-400 max-w-4xl  mx-auto text-center ">
+        //             I design and develop modern, responsive web experiences using React and the MERN stack,
+        //             turning ideas into dynamic websites, portfolios, and interactive dashboards that engage users.
+        //         </p>
+        //     </div>
+
+        //     <div className="grid md:grid-cols-3 text-left gap-8">
+        //         {services.map((service, index) => (
+        //             <div
+        //                 key={index}
+        //                 className="p-6 bg-gradient-to-b from-[#131924] to-[#070e19]  rounded-lg border border-gray-700 hover:bg-gray-700 transition-colors duration-300 cursor-pointer"
+        //             >
+        //                 <div className="mb-5">{service.icon}</div>
+        //                 <h3 className="text-xl font-semibold mb-5 text-white">{service.title}</h3>
+        //                 <p className="text-gray-400">{service.description}</p>
+        //             </div>
+        //         ))}
+        //     </div>
+        // </section>
+
+        <section
+            className="py-24 px-6 md:px-16 bg-gradient-to-b from-gray-50 to-white text-gray-800 dark:from-[#0e151f] dark:to-[#060d18] dark:text-gray-200 transition-colors duration-500"
+            // style={{ clipPath: "ellipse(50% 100% at 50% 0%)" }}
+        >
+            
             <div className="text-center mb-16">
-                <h2 className="text-4xl font-bold mb-4 text-white">Services I Offer</h2>
-                {/* <h2 className="text-4xl font-bold mb-4 text-white text-center md:text-left">
-                    What I Can Build For You
-                </h2> */}
-                <p className="text-gray-400 max-w-4xl  mx-auto text-center ">
+                <h2 className="text-4xl font-bold mb-4 text-gray-900 dark:text-white">
+                    Services I Offer
+                </h2>
+                <p className="text-gray-600 dark:text-gray-400 max-w-4xl mx-auto text-center">
                     I design and develop modern, responsive web experiences using React and the MERN stack,
                     turning ideas into dynamic websites, portfolios, and interactive dashboards that engage users.
                 </p>
@@ -81,15 +110,22 @@ const ServicesSection = () => {
                 {services.map((service, index) => (
                     <div
                         key={index}
-                        className="p-6 bg-gradient-to-b from-[#131924] to-[#070e19]  rounded-lg border border-gray-700 hover:bg-gray-700 transition-colors duration-300 cursor-pointer"
+                        className="p-6 
+        bg-gradient-to-b from-white to-gray-100 dark:from-[#131924] dark:to-[#070e19] 
+        rounded-lg border border-gray-200 dark:border-gray-700 
+        hover:bg-gray-100 dark:hover:bg-gray-700 
+        transition-colors duration-300 cursor-pointer shadow-sm dark:shadow-none"
                     >
                         <div className="mb-5">{service.icon}</div>
-                        <h3 className="text-xl font-semibold mb-5 text-white">{service.title}</h3>
-                        <p className="text-gray-400">{service.description}</p>
+                        <h3 className="text-xl font-semibold mb-5 text-gray-900 dark:text-white">
+                            {service.title}
+                        </h3>
+                        <p className="text-gray-600 dark:text-gray-400">{service.description}</p>
                     </div>
                 ))}
             </div>
         </section>
+
     );
 };
 
