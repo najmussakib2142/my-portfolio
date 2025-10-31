@@ -26,6 +26,7 @@ import {
   SiReactquery
 } from "react-icons/si";
 import { FaPalette, FaServer, FaNetworkWired } from "react-icons/fa";
+import { RxArrowTopRight } from "react-icons/rx";
 
 
 const ProjectCard = ({ project, reverse }) => {
@@ -72,9 +73,40 @@ const ProjectCard = ({ project, reverse }) => {
     <div
       className={`flex flex-col md:flex-row ${reverse ? "md:flex-row-reverse" : ""
         } border border-gray-200  md:h-[500px]
-         dark:border-gray-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 bg-white dark:bg-gray-900`}
+         dark:border-gray-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 `}
     >
-      {/* Image */}
+      <div className="md:w-1/2 p-8 flex flex-col justify-center text-left">
+        <h4 className="text-sm font-semibold text-indigo-600 dark:text-indigo-400 mb-2 uppercase tracking-wide">
+          {project.category || "Featured Project"}
+        </h4>
+        <h3 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+          {project.title}
+        </h3>
+        <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+          {project.description}
+        </p>
+
+
+
+        <div className="flex gap-3 mb-6">
+          {project.tech.map((tech) => (
+            <span key={tech} className="mr-2">
+              {techIcons[tech] || tech}
+            </span>
+          ))}
+        </div>
+
+        <Link
+          to={`/projects/${project.id}`}
+          className="w-fit inline-flex px-4 py-2 border border-gray-200 dark:border-gray-800 text-sm font-medium text-gray-600 dark:text-gray-300 hover:underline"
+        >
+          <div className="flex justify-between items-center gap-1">
+            View Project  <RxArrowTopRight  />
+          </div>
+
+        </Link>
+      </div>
+
       <div className="md:w-1/2  overflow-hidden relative group">
         <img
           src={project.image}
@@ -99,45 +131,6 @@ const ProjectCard = ({ project, reverse }) => {
             <FaGithub /> Code
           </a>
         </div>
-      </div>
-
-      {/* Text */}
-      <div className="md:w-1/2 p-8 flex flex-col justify-center text-left">
-        <h4 className="text-sm font-semibold text-indigo-600 dark:text-indigo-400 mb-2 uppercase tracking-wide">
-          {project.category || "Featured Project"}
-        </h4>
-        <h3 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-gray-100 mb-4">
-          {project.title}
-        </h3>
-        <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-          {project.description}
-        </p>
-
-        {/* <div className="flex gap-2 flex-wrap mb-6">
-          {project.tech.map((t) => (
-            <span
-              key={t}
-              className="px-3 py-1 text-xs bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full text-gray-700 dark:text-gray-300"
-            >
-              {t}
-            </span>
-          ))}
-        </div> */}
-
-        <div className="flex gap-3 mb-6">
-          {project.tech.map((tech) => (
-            <span key={tech} className="mr-2">
-              {techIcons[tech] || tech} {/* fallback to text if icon not found */}
-            </span>
-          ))}
-        </div>
-
-        <Link
-          to={`/projects/${project.id}`}
-          className="inline-block text-sm font-medium text-blue-600 dark:text-blue-400 hover:underline"
-        >
-          View Project →
-        </Link>
       </div>
     </div>
   );

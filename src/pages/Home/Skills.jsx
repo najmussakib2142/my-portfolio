@@ -37,52 +37,50 @@ const skillsData = {
         "Attention to Detail",
         "Continuous Learning",
         "Interpersonal Skills",
-
     ],
 };
 
 const Skills = () => {
     return (
-        <section id="skills" className="relative py-15   overflow-hidden transition-colors duration-500">
-            {/* Background Shapes */}
-            {/* <div className="absolute -top-20 -left-20 w-72 h-72 bg-purple-300/30 dark:bg-purple-700/30 rounded-full blur-3xl animate-spin-slow pointer-events-none"></div> */}
-            {/* <div className="absolute -bottom-16 right-10 w-60 h-60 bg-indigo-300/20 dark:bg-indigo-800/20 rounded-full blur-2xl animate-pulse pointer-events-none"></div> */}
-
-            <div className="container mx-auto px-6  text-center md:text-left relative z-10">
+        <section
+            id="skills"
+            className="py-16 px-10 relative transition-colors duration-500 "
+        >
+            <div className="max-w-7xl mx-auto px-6">
                 {/* Section Header */}
                 <motion.div
-                    initial={{ opacity: 0, y: -40 }}
+                    initial={{ opacity: 0, y: -30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.7 }}
                     viewport={{ once: true }}
-                    className="mb-14"
+                    className="text-center mb-12"
                 >
-                    <h2 className="text-4xl font-extrabold text-center text-primary mb-3"> Skills & Tools </h2> 
-                    <p className="text-gray-600 text-center dark:text-gray-400 max-w-2xl mx-auto text-lg"> A blend of technical and creative skills that help me turn ideas into beautiful, functional web experiences. I’m always learning and improving — one project at a time.
-
+                    <h2 className="text-4xl font-extrabold text-primary mb-3">Skills & Tools</h2>
+                    <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto text-lg">
+                        A blend of technical and creative skills that help me turn ideas into functional web experiences.
                     </p>
                 </motion.div>
 
-                {/* Skill Categories */}
+                {/* Skill Cards */}
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {/* Frontend */}
+                    {/* Frontend Skills */}
                     <motion.div
-                        className="p-6 rounded-xl bg-white/70 dark:bg-gray-800/70 shadow-lg backdrop-blur-lg"
-                        initial={{ opacity: 0, y: 40 }}
+                        className="p-6 bg-gradient-to-b from-white to-gray-100 dark:from-[#131924] dark:to-[#070e19] 
+        rounded-lg border border-gray-200 dark:border-gray-700 
+        hover:bg-gray-100 dark:hover:bg-gray-700 
+        transition-colors duration-300 cursor-pointer shadow-sm dark:shadow-none"
+                        initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.7 }}
                     >
-                        <h3 className="text-xl font-semibold mb-5 flex items-center gap-2 text-primary">
+                        <h3 className="text-xl font-semibold mb-5 text-primary flex items-center gap-2">
                             Frontend Development
                         </h3>
                         {skillsData.frontend.map((s) => (
-                            <div key={s.name} className="mb-5 group">
-                                <div className="flex items-center justify-between text-sm mb-1">
-                                    <div className="flex items-center gap-2">
-                                        {s.icon}
-                                        <span>{s.name}</span>
-                                    </div>
+                            <div key={s.name} className="mb-4 group">
+                                <div className="flex justify-between items-center text-sm mb-1">
+                                    <div className="flex items-center gap-2">{s.icon}<span>{s.name}</span></div>
                                     <span>{s.level}%</span>
                                 </div>
                                 <motion.div
@@ -91,30 +89,30 @@ const Skills = () => {
                                     whileInView={{ width: `${s.level}%` }}
                                     transition={{ duration: 1.2, ease: "easeOut" }}
                                 >
-                                    <div className="h-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-full group-hover:scale-x-105 transform origin-left transition-all duration-500"></div>
+                                    <div className="h-full bg-gradient-to-r from-slate-700 to-slate-500 rounded-full transform origin-left transition-transform duration-500 group-hover:scale-x-105"></div>
                                 </motion.div>
                             </div>
                         ))}
                     </motion.div>
 
-                    {/* Tools */}
+                    {/* Tools & Platforms */}
                     <motion.div
-                        className="p-6 rounded-xl bg-white/70 dark:bg-gray-800/70 shadow-lg backdrop-blur-lg"
-                        initial={{ opacity: 0, y: 40 }}
+                        className="p-6 bg-gradient-to-b from-white to-gray-100 dark:from-[#131924] dark:to-[#070e19] 
+        rounded-lg border border-gray-200 dark:border-gray-700 
+        hover:bg-gray-100 dark:hover:bg-gray-700 
+        transition-colors duration-300 cursor-pointer shadow-sm dark:shadow-none"
+                        initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.7, delay: 0.2 }}
                     >
-                        <h3 className="text-xl font-semibold mb-5 flex items-center gap-2 text-primary">
+                        <h3 className="text-xl font-semibold mb-5 text-primary flex items-center gap-2">
                             Tools & Platforms
                         </h3>
                         {skillsData.tools.map((s) => (
-                            <div key={s.name} className="mb-5 group">
-                                <div className="flex items-center justify-between text-sm mb-1">
-                                    <div className="flex items-center gap-2">
-                                        {s.icon}
-                                        <span>{s.name}</span>
-                                    </div>
+                            <div key={s.name} className="mb-4 group">
+                                <div className="flex justify-between items-center text-sm mb-1">
+                                    <div className="flex items-center gap-2">{s.icon}<span>{s.name}</span></div>
                                     <span>{s.level}%</span>
                                 </div>
                                 <motion.div
@@ -123,7 +121,7 @@ const Skills = () => {
                                     whileInView={{ width: `${s.level}%` }}
                                     transition={{ duration: 1.2, ease: "easeOut" }}
                                 >
-                                    <div className="h-full bg-gradient-to-r from-gray-700 to-gray-500 rounded-full group-hover:scale-x-105 transform origin-left transition-all duration-500"></div>
+                                    <div className="h-full bg-gradient-to-r from-gray-700 to-gray-500 rounded-full transform origin-left transition-transform duration-500 group-hover:scale-x-105"></div>
                                 </motion.div>
                             </div>
                         ))}
@@ -131,21 +129,22 @@ const Skills = () => {
 
                     {/* Soft Skills */}
                     <motion.div
-                        className="p-6 rounded-xl bg-white/70 dark:bg-gray-800/70 shadow-lg backdrop-blur-lg"
-                        initial={{ opacity: 0, y: 40 }}
+                        className="p-6 bg-gradient-to-b from-white to-gray-100 dark:from-[#131924] dark:to-[#070e19] 
+        rounded-lg border border-gray-200 dark:border-gray-700 
+        hover:bg-gray-100 dark:hover:bg-gray-700 
+        transition-colors duration-300 cursor-pointer shadow-sm dark:shadow-none"
+                        initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.7, delay: 0.4 }}
                     >
-                        <h3 className="text-xl font-semibold mb-5 text-primary">
-                            Professional Strengths
-                        </h3>
-                        <div className="flex flex-wrap overflow-x-auto gap-3 justify-center md:justify-start">
+                        <h3 className="text-xl font-semibold mb-5 text-primary">Professional Strengths</h3>
+                        <div className="flex flex-wrap gap-3 justify-center md:justify-start">
                             {skillsData.softSkills.map((skill) => (
                                 <motion.span
                                     key={skill}
                                     whileHover={{ scale: 1.1, rotate: [-2, 2, 0] }}
-                                    className="px-3 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 rounded-full font-medium cursor-pointer shadow-sm transition-all duration-300"
+                                    className="px-3 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 rounded-full font-medium shadow-sm transition-transform duration-300 cursor-pointer"
                                 >
                                     {skill}
                                 </motion.span>

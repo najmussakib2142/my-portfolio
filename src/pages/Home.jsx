@@ -11,6 +11,7 @@ import { FaArrowUp } from "react-icons/fa";
 import About from "./Home/About";
 import ServicesSection from "./Home/ServicesSection";
 import ScrollProgressButton from "./Shared/ScrollProgressButton";
+import ContactBanner from "./Home/ContactBanner";
 
 
 const Home = () => {
@@ -37,7 +38,8 @@ const Home = () => {
       <Skills></Skills>
       <Education></Education>
       <Projects></Projects>
-      <Contact></Contact>
+      <ContactBanner></ContactBanner>
+      {/* <Contact></Contact> */}
 
       <ScrollProgressButton></ScrollProgressButton>
       {/* {showTopBtn && (

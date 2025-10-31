@@ -8,7 +8,7 @@ const Projects = () => {
       id="projects"
       className="relative py-20 px-6 md:px-12  transition-colors duration-500"
     >
-      <div className="max-w-6xl mx-auto text-center">
+      <div className="max-w-7xl mx-auto text-center">
         <motion.h2
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -39,7 +39,9 @@ const Projects = () => {
             transition={{ duration: 0.6, delay: index * 0.1 }}
             viewport={{ once: true }}
           >
-            <ProjectCard project={project} reverse={index % 2 !== 0} />
+            <ProjectCard project={project}
+            // reverse={index % 2 !== 0}
+            />
           </motion.div>
         ))}
       </div>

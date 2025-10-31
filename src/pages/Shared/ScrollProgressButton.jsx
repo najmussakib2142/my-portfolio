@@ -32,7 +32,16 @@ const ScrollProgressButton = () => {
             {showTopBtn && (
                 <div
                     data-aos="fade-up"
-                    className="fixed bottom-10 right-10  z-50 w-12 h-12 group"
+                    className="
+    fixed bottom-4 right-4 md:bottom-10 md:right-10
+    z-50
+    w-10 h-10 md:w-12 md:h-12
+    rounded-full
+    bg-transparent backdrop-blur-sm
+    flex items-center justify-center
+    shadow-md hover:shadow-lg
+    transition-all duration-300
+  "
                 >
                     <div className="relative  w-full h-full">
                         {/* Circular progress ring */}
@@ -40,22 +49,22 @@ const ScrollProgressButton = () => {
                             value={progress}
                             strokeWidth={6}
                             styles={buildStyles({
-                                pathColor: "#0ea5e9", 
-                                trailColor: "#e5e7eb", 
+                                pathColor: "#0ea5e9",
+                                trailColor: "#e5e7eb",
                                 pathTransitionDuration: 0.15,
                             })}
                             className="dark:[&_.CircularProgressbar-path]:stroke-[#225cee]
                          dark:[&_.CircularProgressbar-trail]:stroke-[#1f2937]"
                         />
 
-                        
+
                         <button
                             onClick={scrollToTop}
-                            className="absolute inset-1 flex items-center justify-center rounded-full bg-primary text-white shadow-lg 
+                            className="absolute inset-1 flex items-center justify-center rounded-full bg-transparent text-white shadow-lg 
                         hover:scale-110 transition-transform duration-300
                         dark:bg-transparent dark:opacity-100 "
                         >
-                            <FaArrowUp size={30} color="#0ea5e9"/>
+                            <FaArrowUp size={30} color="#0ea5e9" />
                         </button>
                     </div>
                 </div>
