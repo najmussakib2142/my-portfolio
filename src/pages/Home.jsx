@@ -12,6 +12,7 @@ import About from "./Home/About";
 import ServicesSection from "./Home/ServicesSection";
 import ScrollProgressButton from "./Shared/ScrollProgressButton";
 import ContactBanner from "./Home/ContactBanner";
+import AnimatedTimeline from "./Home/AnimatedTimeline";
 
 
 const Home = () => {
@@ -30,13 +31,14 @@ const Home = () => {
 
 
   return (
-    <div className="max-w-7xl mx-auto text-center">
+    <div className=" text-center">
       <Hero></Hero>
       <About></About>
       <ToolsSliderSection></ToolsSliderSection>
       <ServicesSection></ServicesSection>
       <Skills></Skills>
-      <Education></Education>
+      {/* <Education></Education> */}
+      <AnimatedTimeline></AnimatedTimeline>
       <Projects></Projects>
       <ContactBanner></ContactBanner>
       {/* <Contact></Contact> */}

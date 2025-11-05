@@ -26,8 +26,9 @@ const ProjectDetails = () => {
   const galleryImages = project.images || [project.image];
 
   return (
+    <div className="min-h-screen w-full bg-[#f3f4f6] dark:bg-gray-900">
     <motion.div
-      className=" pt-8 max-w-7xl container mx-auto px-8 md:px-14 pb-24"
+      className=" pt-8 max-w-7xl  container mx-auto px-8 md:px-16 pb-24"
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
@@ -109,33 +110,43 @@ const ProjectDetails = () => {
       )}
 
       {/* Buttons */}
-      <div className="flex flex-wrap gap-4 mt-10">
-        <a
-          href={project.liveLink}
-          target="_blank"
-          rel="noreferrer"
-          className="flex items-center gap-2 btn btn-primary bg-blue-600 hover:bg-blue-700 text-white border-none transition-all shadow-lg"
-        >
-          Live Demo <FaExternalLinkAlt size={14} />
-        </a>
+      <div className="">
+        <div className="flex flex-wrap gap-4 mt-10">
+          <a
+            href={project.liveLink}
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center gap-2 btn btn-primary bg-blue-600 hover:bg-blue-700 text-white border-none transition-all shadow-lg"
+          >
+            Live Demo <FaExternalLinkAlt size={14} />
+          </a>
 
-        <a
-          href={project.codeLink}
-          target="_blank"
-          rel="noreferrer"
-          className="flex items-center gap-2 btn btn-outline border-gray-400 dark:border-gray-600 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
-        >
-          Client Code <FaGithub size={16} />
-        </a>
-
+          <a
+            href={project.codeLink}
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center gap-2 btn btn-outline border-gray-400 dark:border-gray-600 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+          >
+            Client Code <FaGithub size={16} />
+          </a>
+          <a
+            href={project.codeLink}
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center gap-2 btn btn-outline border-gray-400 dark:border-gray-600 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+          >
+            Server Code <FaGithub size={16} />
+          </a>
+        </div>
         <Link
           to="/"
-          className="flex items-center gap-2 btn bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 border-none transition"
+          className="mt-3 w-fit inline-flex items-center gap-2 btn bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 border-none transition"
         >
           <FaArrowLeft /> Back to Home
         </Link>
       </div>
     </motion.div>
+    </div>
   );
 };
 

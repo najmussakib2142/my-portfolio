@@ -61,7 +61,7 @@ const ToolsSliderSection = () => {
         <motion.div
           key={`tool-${i}`}
           whileHover={{ scale: 1.15, rotate: 3 }}
-          className="flex flex-col items-center justify-center min-w-[120px] mx-10 text-center group cursor-pointer"
+          className="flex flex-col items-center justify-center  min-w-[80px] sm:min-w-[100px] md:min-w-[120px]  mx-4 sm:mx-6 md:mx-10 text-center group cursor-pointer"
         >
           <div className="relative text-4xl md:text-6xl mb-2 transition-all duration-300">
             <span className="absolute inset-0 blur-md opacity-10 group-hover:opacity-40 transition-opacity duration-500">
@@ -78,9 +78,8 @@ const ToolsSliderSection = () => {
         <motion.div
           key={`duplicate-tool-${i}`}
           whileHover={{ scale: 1.15, rotate: 3 }}
-          className="flex flex-col items-center justify-center min-w-[120px] mx-10 text-center group cursor-pointer"
-        >
-          <div className="relative text-6xl mb-2 transition-all duration-300">
+          className="flex flex-col items-center justify-center  min-w-[80px] sm:min-w-[100px] md:min-w-[120px] mx-4 sm:mx-6 md:mx-10  text-center group cursor-pointer"        >
+          <div className="relative text-3xl sm:text-4xl md:text-6xl mb-2 transition-all duration-300">
             <span className="absolute inset-0 blur-md opacity-10 group-hover:opacity-40 transition-opacity duration-500">
               {tool.icon}
             </span>
@@ -98,7 +97,7 @@ const ToolsSliderSection = () => {
     <>
       <MarqueeStyles />
 
-      <section className="py-12 md:px-16 overflow-hidden  transition-colors duration-500">
+      <section className="px-6 py-12 md:py-16 max-w-7xl mx-auto md:px-16 overflow-hidden  transition-colors duration-500">
         <div className="container mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: -30 }}
@@ -107,10 +106,10 @@ const ToolsSliderSection = () => {
             viewport={{ once: true }}
             className="mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-extrabold text-gray-800 dark:text-white">
+            <h2 className="text-3xl md:text-4xl mb-5 font-bold text-black dark:text-white">
               Tools & Technologies I Work With
             </h2>
-            <p className="text-gray-600 dark:text-gray-400 mt-3 text-lg max-w-2xl mx-auto">
+            <p className="text-gray-600 dark:text-gray-400  text-lg max-w-2xl mx-auto">
               A collection of technologies I use daily to design, build, and deploy
               responsive and efficient web applications.
             </p>

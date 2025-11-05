@@ -6,7 +6,7 @@ const Education = () => {
   return (
     <section
       id="education"
-      className="py-20 px-6 md:px-16 relative overflow-hidden transition-colors duration-500"
+      className="py-12 md:py-16 max-w-7xl mx-auto px-6 md:px-16 relative overflow-hidden transition-colors duration-500"
     >
       {/* Decorative circles */}
       {/* <div className="absolute -top-16 -left-16 w-40 h-40 bg-indigo-200 dark:bg-indigo-900 rounded-full opacity-10 blur-2xl animate-pulse"></div> */}
@@ -19,7 +19,7 @@ const Education = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-3xl md:text-4xl font-extrabold mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-purple-500"
+          className="text-3xl md:text-4xl font-bold mb-5 text-center bg-clip-text  text-black dark:text-white "
         >
           Education
         </motion.h2>

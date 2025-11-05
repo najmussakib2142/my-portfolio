@@ -6,15 +6,15 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="relative py-20 px-6 md:px-12  transition-colors duration-500"
+      className="relative max-w-7xl mx-auto py-12 md:py-16 lg:py-20 px-6 md:px-16  transition-colors duration-500"
     >
-      <div className="max-w-7xl mx-auto text-center">
+      <div className=" text-center">
         <motion.h2
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500 mb-4"
+          className="text-3xl md:text-4xl font-bold  bg-clip-text text-black dark:text-white mb-5"
         >
           Showcasing My Remarkable Projects
         </motion.h2>
@@ -24,13 +24,13 @@ const Projects = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
           viewport={{ once: true }}
-          className="text-gray-600 text-center dark:text-gray-400 max-w-3xl mx-auto text-lg mb-12"
+          className="text-gray-600 text-center dark:text-gray-400 max-w-3xl mx-auto text-lg mb-14"
         >
           A collection of my latest web development projects. Each project reflects my passion for crafting clean, responsive, and functional user experiences.
         </motion.p>
       </div>
 
-      <div className="space-y-12">
+      <div className="space-y-0 border dark:border-gray-800 border-gray-200">
         {projects.map((project, index) => (
           <motion.div
             key={project.id}
@@ -40,7 +40,7 @@ const Projects = () => {
             viewport={{ once: true }}
           >
             <ProjectCard project={project}
-            // reverse={index % 2 !== 0}
+            reverse={index % 2 !== 0}
             />
           </motion.div>
         ))}

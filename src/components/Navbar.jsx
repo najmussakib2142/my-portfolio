@@ -19,7 +19,7 @@ const Navbar = () => {
       <Link
         key={item.name}
         smooth
-        to={`/${item.href}`} // works across pages
+        to={`/${item.href}`}
         className={`text-gray-700 dark:text-gray-300 hover:text-primary transition-colors px-3 py-1 rounded ${isMobile ? "block w-full" : "inline-block"}`}
         onClick={() => isMobile && setMobileOpen(false)}
       >
@@ -28,16 +28,17 @@ const Navbar = () => {
     ));
 
   return (
-    <nav className="sticky top-0 left-0 w-full z-50 bg-white/10 dark:bg-gray-950/50 backdrop-blur-md shadow-md transition-all duration-300">
-      <div className="max-w-7xl mx-auto flex justify-between items-center px-4 md:px-10 py-0.5">
+    <nav className="sticky top-0  left-0 w-full z-50 bg-white/10 dark:bg-gray-950/50 backdrop-blur-md shadow-md transition-all duration-300">
+      <div className="max-w-7xl px-3 md:px-12.5 mx-auto flex justify-between items-center py-0.5">
         {/* Logo */}
-        <Link smooth to="/" className="text-3xl md:ml-2 font-extrabold">
+        <Link smooth to="/" className="text-3xl  font-extrabold">
           <span className="text-slate-900 dark:text-white">N</span>
           <span className="text-primary">.</span>
         </Link>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-6">
+          
           {renderNavLinks()}
           <Link smooth to="/#contact-banner">
             <button className="bg-black dark:bg-white text-white dark:text-black px-3 py-1  transition hover:scale-105">

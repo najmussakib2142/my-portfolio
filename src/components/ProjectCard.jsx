@@ -71,9 +71,9 @@ const ProjectCard = ({ project, reverse }) => {
 
   return (
     <div
-      className={`flex flex-col md:flex-row ${reverse ? "md:flex-row-reverse" : ""
-        } border border-gray-200  md:h-[500px]
-         dark:border-gray-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 `}
+      className={`flex flex-col-reverse md:flex-row ${reverse ? "md:flex-row-reverse" : ""
+        }  border-gray-200  md:h-[500px]
+         dark:border-gray-800  overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 `}
     >
       <div className="md:w-1/2 p-8 flex flex-col justify-center text-left">
         <h4 className="text-sm font-semibold text-indigo-600 dark:text-indigo-400 mb-2 uppercase tracking-wide">

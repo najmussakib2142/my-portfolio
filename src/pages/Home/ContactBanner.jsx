@@ -6,9 +6,9 @@ const ContactBanner = () => {
     return (
         <section
         id="contact-banner"
-            className=" relative bg-gray-100 dark:bg-gray-900 py-20 text-gray-900 dark:text-white "
+            className=" relative bg-gray-100 dark:bg-gray-900 py-12 md:py-16 lg:py-20 text-gray-900 dark:text-white "
         >
-            <div className="px-6 md:px-16 flex flex-col md:flex-row items-center justify-between gap-10">
+            <div className="px-6 max-w-7xl mx-auto md:px-16 flex flex-col md:flex-row items-center justify-between gap-20">
 
                 {/* Text Section */}
                 <div className="text-center md:text-left space-y-4 max-w-lg">
