@@ -28,7 +28,7 @@ const ProjectDetails = () => {
   return (
     <div className="min-h-screen w-full bg-[#f3f4f6] dark:bg-gray-900">
     <motion.div
-      className=" pt-8 max-w-7xl  container mx-auto px-8 md:px-16 pb-24"
+      className=" pt-8 max-w-7xl  container mx-auto px-6 md:px-16 pb-24"
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
@@ -122,7 +122,7 @@ const ProjectDetails = () => {
           </a>
 
           <a
-            href={project.codeLink}
+            href={project.clientSide}
             target="_blank"
             rel="noreferrer"
             className="flex items-center gap-2 btn btn-outline border-gray-400 dark:border-gray-600 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
@@ -130,7 +130,7 @@ const ProjectDetails = () => {
             Client Code <FaGithub size={16} />
           </a>
           <a
-            href={project.codeLink}
+            href={project.ServerSide}
             target="_blank"
             rel="noreferrer"
             className="flex items-center gap-2 btn btn-outline border-gray-400 dark:border-gray-600 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 transition"

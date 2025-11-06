@@ -6,6 +6,7 @@ const Education = () => {
   return (
     <section
       id="education"
+      // id="education"
       className="py-12 md:py-16 max-w-7xl mx-auto px-6 md:px-16 relative overflow-hidden transition-colors duration-500"
     >
       {/* Decorative circles */}

@@ -169,7 +169,8 @@ const TimelineDivider = ({ label }) => (
 
 // --- Main Timeline Section (UPGRADED FOR MOBILE) ---
 const TimelineSection = () => (
-    <section className="py-12 md:py-16 mx-auto max-w-7xl px-6 md:px-16 text-gray-900 dark:text-gray-100">
+    <section id="education"
+     className="py-12 md:py-16 mx-auto max-w-7xl px-6 md:px-16 text-gray-900 dark:text-gray-100">
         <div className="container mx-auto">
             {/* Heading */}
             <motion.h2

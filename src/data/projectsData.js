@@ -9,7 +9,8 @@ export const projects = [
       "A tourism discovery platform showcasing destinations across Bangladesh with maps, packages, stories, and booking options.",
     tech: ["React", "React Router", "Tailwind CSS", "Framer Motion"],
     liveLink: "https://explore-bd-admin.web.app/",
-    codeLink: "https://github.com/najmussakib2142/explore-bd-client",
+    clientSide: "https://github.com/najmussakib2142/explore-bd-client",
+    ServerSide: "https://github.com/najmussakib2142/explore-bd-server",
     challenges: [
       "Integrating responsive map components for regional exploration.",
       "Ensuring smooth UI transitions and optimized image loading.",
@@ -28,7 +29,8 @@ export const projects = [
       "An assignment submission and evaluation platform enabling students to submit work and evaluators to provide feedback and grades in real time.",
     tech: ["React", "Firebase", "Tailwind CSS"],
     liveLink: "https://edu-circle-admin.web.app/",
-    codeLink: "https://github.com/najmussakib2142/edu-circle-client",
+    clientSide: "https://github.com/najmussakib2142/edu-circle-client",
+    ServerSide: "https://github.com/najmussakib2142/edu-circle-server",
     challenges: [
       "Designing a secure file upload and storage flow using Firebase Storage.",
       "Implementing evaluator feedback synchronization and live status updates.",
@@ -47,7 +49,8 @@ export const projects = [
       "A social platform where users can share hobbies, join interest-based communities, and connect with like-minded individuals.",
     tech: ["React", "Firebase", "Tailwind CSS",],
     liveLink: "https://hobby-hub-discovery.web.app",
-    codeLink: "https://github.com/najmussakib2142/hobby-hub-client",
+    clientSide: "https://github.com/najmussakib2142/hobby-hub-client",
+    ServerSide: "https://github.com/najmussakib2142/hobby-hub-server",
     challenges: [
       "Building an authentication system for user profiles and posts.",
       "Managing community feeds and ensuring smooth image upload handling.",

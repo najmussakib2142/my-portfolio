@@ -8,7 +8,7 @@ const About = () => {
         <div>
             <section
                 id="about"
-                className=" px-6 py-12 md:py-16  transition-colors duration-500  text-gray-300"
+                className="  py-12 px-6 md:px-0 md:py-16  transition-colors duration-500  text-gray-300"
                 data-aos="fade-up"
             >
                 <div className="container pb-5 mx-auto max-w-7xl md:px-16 text-center md:text-left">

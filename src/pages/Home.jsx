@@ -13,6 +13,7 @@ import ServicesSection from "./Home/ServicesSection";
 import ScrollProgressButton from "./Shared/ScrollProgressButton";
 import ContactBanner from "./Home/ContactBanner";
 import AnimatedTimeline from "./Home/AnimatedTimeline";
+import Banner from "./Home/Banner";
 
 
 const Home = () => {
@@ -32,6 +33,7 @@ const Home = () => {
 
   return (
     <div className=" text-center">
+      {/* <Banner></Banner> */}
       <Hero></Hero>
       <About></About>
       <ToolsSliderSection></ToolsSliderSection>
