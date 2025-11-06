@@ -32,16 +32,8 @@ const ScrollProgressButton = () => {
             {showTopBtn && (
                 <div
                     data-aos="fade-up"
-                    className="
-    fixed bottom-4 right-4 md:bottom-10 md:right-10
-    z-50
-    w-10 h-10 md:w-12 md:h-12
-    rounded-full
-    bg-transparent backdrop-blur-sm
-    flex items-center justify-center
-    shadow-md hover:shadow-lg
-    transition-all duration-300
-  "
+                    className=" fixed bottom-4 right-4 md:bottom-10 md:right-10 z-50
+                     w-10 h-10 md:w-12 md:h-12 rounded-full bg-transparent backdrop-blur-sm  flex items-center justify-center  shadow-md hover:shadow-lg  transition-all duration-300"
                 >
                     <div className="relative  w-full h-full">
                         {/* Circular progress ring */}
@@ -60,7 +52,7 @@ const ScrollProgressButton = () => {
 
                         <button
                             onClick={scrollToTop}
-                            className="absolute inset-1 flex items-center justify-center rounded-full bg-transparent text-white shadow-lg 
+                            className="absolute cursor-pointer inset-1 flex items-center justify-center rounded-full bg-transparent text-white shadow-lg 
                         hover:scale-110 transition-transform duration-300
                         dark:bg-transparent dark:opacity-100 "
                         >

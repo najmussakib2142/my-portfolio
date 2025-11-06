@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { FaExternalLinkAlt, FaGithub, FaArrowLeft } from "react-icons/fa";
 import { projects } from "../../data/projectsData";
+import { HashLink } from "react-router-hash-link";
 
 // LightGallery imports
 import LightGallery from "lightgallery/react";
@@ -26,126 +27,127 @@ const ProjectDetails = () => {
   const galleryImages = project.images || [project.image];
 
   return (
-    <div className="min-h-screen w-full bg-[#f3f4f6] dark:bg-gray-900">
-    <motion.div
-      className=" pt-8 max-w-7xl  container mx-auto px-6 md:px-16 pb-24"
-      initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4 }}
-    >
-      {/* Header */}
-      <motion.h1
-        className="text-4xl font-bold mb-6 text-gray-900 dark:text-gray-100"
-        initial={{ opacity: 0, y: -20 }}
+    <div className=" w-full bg-[#f3f4f6] dark:bg-gray-900">
+      <motion.div
+        className=" pt-8 max-w-7xl  container mx-auto px-6 md:px-16 pb-24"
+        initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4 }}
       >
-        {project.title}
-      </motion.h1>
-
-      {/* LightGallery */}
-      <LightGallery
-        speed={500}
-        plugins={[lgZoom, lgThumbnail]}
-        elementClassNames="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8"
-      >
-        {galleryImages.map((img, idx) => (
-          <a key={idx} href={img} className="block rounded overflow-hidden">
-            <img
-              src={img}
-              alt={`${project.title} screenshot ${idx + 1}`}
-              className="w-full h-48 object-cover rounded-lg shadow-md hover:scale-105 transition-transform"
-            />
-          </a>
-        ))}
-      </LightGallery>
-
-      {/* Description */}
-      <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-8 text-lg">
-        {project.description}
-      </p>
-
-      {/* Tech Stack */}
-      <section className="mb-8">
-        <h3 className="font-semibold text-xl text-gray-800 dark:text-gray-200 mb-3">
-          Main Tech Stack
-        </h3>
-        <div className="flex flex-wrap gap-2">
-          {project.tech.map((t) => (
-            <span
-              key={t}
-              className="px-3 py-1 text-sm font-medium bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-full text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition"
-            >
-              {t}
-            </span>
-          ))}
-        </div>
-      </section>
-
-      {/* Challenges */}
-      {project.challenges && (
-        <section className="mb-8">
-          <h3 className="font-semibold text-xl text-gray-800 dark:text-gray-200 mb-3">
-            Challenges Faced
-          </h3>
-          <ul className="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
-            {project.challenges.map((c, i) => (
-              <li key={i}>{c}</li>
-            ))}
-          </ul>
-        </section>
-      )}
-
-      {/* Future Plans */}
-      {project.improvements && (
-        <section className="mb-8">
-          <h3 className="font-semibold text-xl text-gray-800 dark:text-gray-200 mb-3">
-            Potential Improvements & Future Plans
-          </h3>
-          <ul className="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
-            {project.improvements.map((i, idx) => (
-              <li key={idx}>{i}</li>
-            ))}
-          </ul>
-        </section>
-      )}
-
-      {/* Buttons */}
-      <div className="">
-        <div className="flex flex-wrap gap-4 mt-10">
-          <a
-            href={project.liveLink}
-            target="_blank"
-            rel="noreferrer"
-            className="flex items-center gap-2 btn btn-primary bg-blue-600 hover:bg-blue-700 text-white border-none transition-all shadow-lg"
-          >
-            Live Demo <FaExternalLinkAlt size={14} />
-          </a>
-
-          <a
-            href={project.clientSide}
-            target="_blank"
-            rel="noreferrer"
-            className="flex items-center gap-2 btn btn-outline border-gray-400 dark:border-gray-600 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
-          >
-            Client Code <FaGithub size={16} />
-          </a>
-          <a
-            href={project.ServerSide}
-            target="_blank"
-            rel="noreferrer"
-            className="flex items-center gap-2 btn btn-outline border-gray-400 dark:border-gray-600 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
-          >
-            Server Code <FaGithub size={16} />
-          </a>
-        </div>
-        <Link
-          to="/"
-          className="mt-3 w-fit inline-flex items-center gap-2 btn bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 border-none transition"
+        {/* Header */}
+        <motion.h1
+          className="text-4xl font-bold mb-6 text-gray-900 dark:text-gray-100"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
         >
-          <FaArrowLeft /> Back to Home
-        </Link>
-      </div>
-    </motion.div>
+          {project.title}
+        </motion.h1>
+
+        {/* LightGallery */}
+        <LightGallery
+          speed={500}
+          plugins={[lgZoom, lgThumbnail]}
+          elementClassNames="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8"
+        >
+          {galleryImages.map((img, idx) => (
+            <a key={idx} href={img} className="block rounded overflow-hidden">
+              <img
+                src={img}
+                alt={`${project.title} screenshot ${idx + 1}`}
+                className="w-full h-48 object-cover rounded-lg shadow-md hover:scale-105 transition-transform"
+              />
+            </a>
+          ))}
+        </LightGallery>
+
+        {/* Description */}
+        <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-8 text-lg">
+          {project.description}
+        </p>
+
+        {/* Tech Stack */}
+        <section className="mb-8">
+          <h3 className="font-semibold text-xl text-gray-800 dark:text-gray-200 mb-3">
+            Main Tech Stack
+          </h3>
+          <div className="flex flex-wrap gap-2">
+            {project.tech.map((t) => (
+              <span
+                key={t}
+                className="px-3 py-1 text-sm font-medium bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-full text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition"
+              >
+                {t}
+              </span>
+            ))}
+          </div>
+        </section>
+
+        {/* Challenges */}
+        {project.challenges && (
+          <section className="mb-8">
+            <h3 className="font-semibold text-xl text-gray-800 dark:text-gray-200 mb-3">
+              Challenges Faced
+            </h3>
+            <ul className="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
+              {project.challenges.map((c, i) => (
+                <li key={i}>{c}</li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        {/* Future Plans */}
+        {project.improvements && (
+          <section className="mb-8">
+            <h3 className="font-semibold text-xl text-gray-800 dark:text-gray-200 mb-3">
+              Potential Improvements & Future Plans
+            </h3>
+            <ul className="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
+              {project.improvements.map((i, idx) => (
+                <li key={idx}>{i}</li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        {/* Buttons */}
+        <div className="">
+          <div className="flex flex-wrap gap-4 mt-10">
+            <a
+              href={project.liveLink}
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-2 btn btn-primary bg-blue-600 hover:bg-blue-700 text-white border-none transition-all shadow-lg"
+            >
+              Live Demo <FaExternalLinkAlt size={14} />
+            </a>
+
+            <a
+              href={project.clientSide}
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-2 btn btn-outline border-gray-400 dark:border-gray-600 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+            >
+              Client Code <FaGithub size={16} />
+            </a>
+            <a
+              href={project.ServerSide}
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-2 btn btn-outline border-gray-400 dark:border-gray-600 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+            >
+              Server Code <FaGithub size={16} />
+            </a>
+          </div>
+          <HashLink
+            smooth
+            to="/#projects"
+            className="mt-3 w-fit inline-flex items-center gap-2 btn bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 border-none transition"
+          >
+            <FaArrowLeft /> Back to Project
+          </HashLink>
+        </div>
+      </motion.div>
     </div>
   );
 };

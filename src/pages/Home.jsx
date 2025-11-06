@@ -14,6 +14,8 @@ import ScrollProgressButton from "./Shared/ScrollProgressButton";
 import ContactBanner from "./Home/ContactBanner";
 import AnimatedTimeline from "./Home/AnimatedTimeline";
 import Banner from "./Home/Banner";
+import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
 
 const Home = () => {
@@ -29,9 +31,23 @@ const Home = () => {
   // }, []);
 
   // const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
+ const location = useLocation();
 
+ useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace("#", "");
+      const section = document.getElementById(id);
+      if (section) {
+        // smooth scroll after a tiny delay to ensure section exists
+        setTimeout(() => {
+          section.scrollIntoView({ behavior: "smooth" });
+        }, 50);
+      }
+    }
+  }, [location]);
 
   return (
+    
     <div className=" text-center">
       {/* <Banner></Banner> */}
       <Hero></Hero>
