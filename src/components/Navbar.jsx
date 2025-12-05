@@ -100,7 +100,7 @@ const Navbar = () => {
 
       {/* Mobile Dropdown */}
       {mobileOpen && (
-        <div className="md:hidden bg-white dark:bg-gray-900 shadow-lg rounded-b-lg">
+        <div className="md:hidden bg-white/10 dark:bg-gray-950/50 backdrop-blur-md shadow-md rounded-b-lg transition-all duration-300">
           <div className="flex flex-col p-4 space-y-2">{renderNavLinks(true)}</div>
         </div>
       )}

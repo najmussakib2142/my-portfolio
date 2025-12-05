@@ -122,7 +122,7 @@ const Hero = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-transparent to-black/20 dark:to-white/20 pointer-events-none"></div>
 
               <img
-                src="https://i.ibb.co/mCsF003L/Chat-GPT-Image-Sep-6-2025-11-02-32-PM.png"
+                src="https://i.ibb.co.com/MxDW6573/najmus-img.webp"
                 alt="Najmus Sakib"
                 className="object-cover w-full h-full"
               />

@@ -35,7 +35,7 @@ const Contact = () => {
   return (
     <motion.section
       id="contact"
-      className="pt-15 pb-20 bg-gray-100 dark:bg-gray-900 px-6 md:px-12  transition-colors duration-500"
+      className="pt-15 pb-20 bg-gray-100 dark:bg-gray-900 px-6 md:px-16  transition-colors duration-500"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}

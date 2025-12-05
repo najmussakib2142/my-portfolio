@@ -73,7 +73,7 @@ const About = () => {
                         </div>
                         <div>
                             <h3 className="font-semibold text-gray-700 dark:text-gray-400 mb-3">Social Media</h3>
-                            <div className="flex justify-center md:justify-start gap-6 text-xl mt-3">
+                            <div className="flex justify-start md:justify-start gap-6 text-xl mt-3">
                                 {[
                                     { Icon: FaGithub, link: "https://github.com/najmussakib2142" },
                                     { Icon: FaLinkedin, link: "https://www.linkedin.com/in/sm-najmus-sakib" },

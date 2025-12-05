@@ -16,6 +16,8 @@ import AnimatedTimeline from "./Home/AnimatedTimeline";
 import Banner from "./Home/Banner";
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import FastCheapGood from "./Home/FastCheapGood";
+import ToggleLogic from "./Home/ToggleLogic";
 
 
 const Home = () => {
@@ -53,6 +55,8 @@ const Home = () => {
       <Hero></Hero>
       <About></About>
       <ToolsSliderSection></ToolsSliderSection>
+      {/* <FastCheapGood></FastCheapGood> */}
+      {/* <ToggleLogic></ToggleLogic> */}
       <ServicesSection></ServicesSection>
       <Skills></Skills>
       {/* <Education></Education> */}

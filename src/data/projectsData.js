@@ -1,8 +1,44 @@
 export const projects = [
 
-
   {
     id: 1,
+    title: "SimpleBlog",
+    image: "https://i.ibb.co.com/gMFwbgrX/Screenshot-2025-12-05-070130.png",
+    description:
+      "A modern blogging platform where users can write, explore, and manage articles with enhanced features for search, bookmarks, profiles, and admin control.",
+    tech: ["Next.js", "React", "Tailwind CSS", "Framer Motion","Firebase", "MongoDB", "Mongoose", "Cloudinary", "Firebase Auth"],
+    liveLink: "https://simple-blog-website-brown.vercel.app/",
+    clientSide: "https://github.com/najmussakib2142/simple-blog-website",
+    ServerSide: "https://github.com/najmussakib2142/simple-blog-website",
+    "keyFeatures": [
+      "✍️ Write & publish articles with full CRUD operations",
+      "📖 Read & explore blogs with dynamic category and keyword search",
+      "⭐ Bookmark your favorite blogs for quick access",
+      "👤 User Profiles with Firebase authentication and secure API access",
+      "🛡 Admin Role-Based Access Control (RBAC) for managing blogs",
+      "⚡ Fast, responsive, and interactive UI with Tailwind CSS, DaisyUI & Framer Motion",
+      "💾 MongoDB backend with server-side APIs",
+      "🌐 Cloudinary image uploads for blog posts",
+      "🔗 Dynamic routing for individual blog pages",
+      "💻 Smooth animations and reusable components",
+      "🚀 Production-ready deployment on Vercel"
+    ],
+    challenges: [
+      "Implementing secure RBAC for admin vs regular users",
+      "Ensuring real-time sync and pagination in BlogsClient",
+      "Handling modal-based editing with proper DB connection",
+      "Integrating Firebase Auth with Cloudinary image uploads",
+      "Creating a full-featured search and category filter system"
+    ],
+    improvements: [
+      "Add messaging or commenting features for blog posts",
+      "Enable post moderation, recommendations, and trending blogs",
+      "Optimize performance for larger datasets and high traffic",
+      "Add analytics and dashboards for blog engagement"
+    ],
+  },
+  {
+    id: 2,
     title: "Explore BD",
     image: "https://i.ibb.co.com/FbrvgGJN/beautiful-axis-deer-from-sundarbans-tiger-reserve-india.jpg",
     description:
@@ -22,7 +58,7 @@ export const projects = [
   },
 
   {
-    id: 2,
+    id: 3,
     title: "eduCircle",
     image: "https://i.ibb.co.com/7Jt7TXqS/Screenshot-2025-10-23-025813.png",
     description:
@@ -41,23 +77,5 @@ export const projects = [
     ],
   },
 
-  {
-    id: 3,
-    title: "Hobby Hub",
-    image: "https://i.ibb.co.com/MkLJ0jjV/9632519-4190402.jpg",
-    description:
-      "A social platform where users can share hobbies, join interest-based communities, and connect with like-minded individuals.",
-    tech: ["React", "Firebase", "Tailwind CSS",],
-    liveLink: "https://hobby-hub-discovery.web.app",
-    clientSide: "https://github.com/najmussakib2142/hobby-hub-client",
-    ServerSide: "https://github.com/najmussakib2142/hobby-hub-server",
-    challenges: [
-      "Building an authentication system for user profiles and posts.",
-      "Managing community feeds and ensuring smooth image upload handling.",
-    ],
-    improvements: [
-      "Add messaging features and group events.",
-      "Enable post moderation and hobby-based recommendations.",
-    ],
-  },
+
 ];

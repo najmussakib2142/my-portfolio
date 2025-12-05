@@ -83,6 +83,21 @@ const ProjectDetails = () => {
         </section>
 
         {/* Challenges */}
+        {project.keyFeatures && (
+          <section className="mb-8">
+            <h3 className="font-semibold text-xl text-gray-800 dark:text-gray-200 mb-3">
+              key Features
+            </h3>
+            <ul className="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
+              {project.keyFeatures.map((c, i) => (
+                <li key={i}>{c}</li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+
+        {/* Challenges */}
         {project.challenges && (
           <section className="mb-8">
             <h3 className="font-semibold text-xl text-gray-800 dark:text-gray-200 mb-3">

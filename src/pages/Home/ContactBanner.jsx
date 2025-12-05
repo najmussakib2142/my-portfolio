@@ -18,7 +18,7 @@ const ContactBanner = () => {
 
                     <Link
                         to="/contact"
-                        className=" btn mt-4 border-none  bg-purple-600 hover:bg-purple-700  text-white  hover:scale-105 transition-transform
+                        className=" btn mt-4 border-none  bg-indigo-600 hover:bg-indigo-700  text-white  hover:scale-105 transition-transform
             "
                     >
                         Say Hello →

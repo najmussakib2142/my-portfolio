@@ -23,8 +23,9 @@ import {
   SiVite,
   SiNetlify,
   // SiVisualstudiocode,
-  SiReactquery
+  SiReactquery, SiCloudinary
 } from "react-icons/si";
+import { RiNextjsFill } from "react-icons/ri";
 import { FaPalette, FaServer, FaNetworkWired } from "react-icons/fa";
 import { RxArrowTopRight } from "react-icons/rx";
 
@@ -42,6 +43,9 @@ const ProjectCard = ({ project, reverse }) => {
     "CSS3": <SiCss3 className="text-blue-500 text-xl" />,
     "Axios": <SiAxios className="text-blue-300 text-xl" />,
     "Framer Motion": <SiFramer className="text-pink-400 text-xl" />,
+    "Next.js": <RiNextjsFill className="text-gray-800 dark:text-white text-xl" />,
+    "Cloudinary": <SiCloudinary className="text-gray-800 dark:text-white text-xl" />,
+
     // "React-Spring": <SiReactspring className="text-green-400 text-xl" />,
 
     // Backend
@@ -89,7 +93,7 @@ const ProjectCard = ({ project, reverse }) => {
 
 
         <div className="flex gap-3 mb-6">
-          {project.tech.map((tech) => (
+          {project.tech.slice(0, 5).map((tech) => (
             <span key={tech} className="mr-2">
               {techIcons[tech] || tech}
             </span>
@@ -101,7 +105,7 @@ const ProjectCard = ({ project, reverse }) => {
           className="w-fit inline-flex px-4 py-2 border border-gray-200 dark:border-gray-800 text-sm font-medium text-gray-600 dark:text-gray-300 hover:underline"
         >
           <div className="flex justify-between items-center gap-1">
-            View Project  <RxArrowTopRight  />
+            View Project  <RxArrowTopRight />
           </div>
 
         </Link>
