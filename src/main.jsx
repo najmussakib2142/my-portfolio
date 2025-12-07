@@ -18,7 +18,7 @@ import { Toaster } from "react-hot-toast";
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <div className='font-roboto'>
+    <div className='font-roboto '>
       <ThemeProvider>
         <RouterProvider router={router} />
         <Toaster position="top-right" reverseOrder={false} />

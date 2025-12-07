@@ -10,9 +10,9 @@ const RootLayout = () => {
     const { theme, toggleTheme } = useTheme();
 
     return (
-        <div>
+        <div className=''>
             <Navbar />
-            <main>
+            <main className=''>
                 <Outlet />
             </main>
             <Footer />

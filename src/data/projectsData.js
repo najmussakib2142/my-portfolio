@@ -42,14 +42,14 @@ export const projects = [
     title: "Explore BD",
     image: "https://i.ibb.co.com/FbrvgGJN/beautiful-axis-deer-from-sundarbans-tiger-reserve-india.jpg",
     description:
-      "A tourism discovery platform showcasing destinations across Bangladesh with maps, packages, stories, and booking options.",
-    tech: ["React", "React Router", "Tailwind CSS", "Framer Motion"],
+      "ExploreBD is a comprehensive Tourism Management System for Bangladesh. It serves as an online platform to help travelers explore destinations, meet tour guides, and plan trips efficiently. The project includes features for tourists, tour guides, and admin users.",
+    tech: ["React", "React Router", "Tailwind CSS", "Framer Motion", ],
     liveLink: "https://explore-bd-admin.web.app/",
     clientSide: "https://github.com/najmussakib2142/explore-bd-client",
     ServerSide: "https://github.com/najmussakib2142/explore-bd-server",
     challenges: [
-      "Integrating responsive map components for regional exploration.",
-      "Ensuring smooth UI transitions and optimized image loading.",
+      "JWT authentication and protected routes",
+      "Environment variables for Firebase and MongoDB credentials",
     ],
     improvements: [
       "Add search and filter features for tours.",

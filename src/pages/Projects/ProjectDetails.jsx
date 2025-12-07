@@ -27,7 +27,7 @@ const ProjectDetails = () => {
   const galleryImages = project.images || [project.image];
 
   return (
-    <div className=" w-full bg-[#f3f4f6] dark:bg-gray-900">
+    <div className=" w-full min-h-screen bg-[#f3f4f6] dark:bg-gray-900">
       <motion.div
         className=" pt-8 max-w-7xl  container mx-auto px-6 md:px-16 pb-24"
         initial={{ opacity: 0, y: 30 }}
