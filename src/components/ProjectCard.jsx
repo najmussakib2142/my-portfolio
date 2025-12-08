@@ -23,6 +23,7 @@ import {
   SiVite,
   SiNetlify,
   // SiVisualstudiocode,
+  
   SiReactquery, SiCloudinary
 } from "react-icons/si";
 import { RiNextjsFill } from "react-icons/ri";
@@ -49,8 +50,10 @@ const ProjectCard = ({ project, reverse }) => {
     // "React-Spring": <SiReactspring className="text-green-400 text-xl" />,
 
     // Backend
+    // "Next.js": <SiExpress className="text-gray-800 dark:text-white text-xl" />,
+
     "Node.js": <SiNodedotjs className="text-green-600 text-xl" />,
-    "Express.js": <SiExpress className="text-gray-400 text-xl" />,
+    "Express": <SiExpress className="text-gray-400 text-xl" />,
     "MongoDB": <SiMongodb className="text-green-500 text-xl" />,
     "Mongoose": <SiMongodb className="text-green-500 text-xl" />, // substitute
     "Firebase": <SiFirebase className="text-amber-500 text-xl" />,

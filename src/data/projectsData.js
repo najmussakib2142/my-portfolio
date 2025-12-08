@@ -6,7 +6,7 @@ export const projects = [
     image: "https://i.ibb.co.com/gMFwbgrX/Screenshot-2025-12-05-070130.png",
     description:
       "A modern blogging platform where users can write, explore, and manage articles with enhanced features for search, bookmarks, profiles, and admin control.",
-    tech: ["Next.js", "React", "Tailwind CSS", "Framer Motion","Firebase", "MongoDB", "Mongoose", "Cloudinary", "Firebase Auth"],
+    tech: ["Next.js", "React", "Tailwind CSS", "Framer Motion", "Firebase", "MongoDB", "Mongoose", "Cloudinary", "Firebase Auth"],
     liveLink: "https://simple-blog-website-brown.vercel.app/",
     clientSide: "https://github.com/najmussakib2142/simple-blog-website",
     ServerSide: "https://github.com/najmussakib2142/simple-blog-website",
@@ -41,19 +41,35 @@ export const projects = [
     id: 2,
     title: "Explore BD",
     image: "https://i.ibb.co.com/FbrvgGJN/beautiful-axis-deer-from-sundarbans-tiger-reserve-india.jpg",
-    description:
-      "ExploreBD is a comprehensive Tourism Management System for Bangladesh. It serves as an online platform to help travelers explore destinations, meet tour guides, and plan trips efficiently. The project includes features for tourists, tour guides, and admin users.",
-    tech: ["React", "React Router", "Tailwind CSS", "Framer Motion", ],
+    description: "ExploreBD is a comprehensive Tourism Management System for Bangladesh. It serves as an online platform to help travelers explore destinations, meet tour guides, and plan trips efficiently. The project includes extensive features for Tourists, Tour Guides, and Admin users, covering all aspects from booking to management.", tech: [
+      "React",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Tailwind CSS",
+      "Firebase Admin",
+      "Stripe",
+      "TanStack Query",
+      "Framer Motion",
+      "JWT"
+    ],
     liveLink: "https://explore-bd-admin.web.app/",
     clientSide: "https://github.com/najmussakib2142/explore-bd-client",
     ServerSide: "https://github.com/najmussakib2142/explore-bd-server",
     challenges: [
-      "JWT authentication and protected routes",
-      "Environment variables for Firebase and MongoDB credentials",
+      "Implementing robust JWT authentication across the MERN stack and securing protected routes based on three distinct user roles (Tourist, Guide, Admin).",
+      "Successfully integrating the Firebase Admin SDK on the Node/Express backend for secure user authentication and role management, which involved complex server-side verification.",
+      "Handling sensitive real-time payment processing and webhooks using the Stripe payment gateway for tour bookings.",
+      "Designing and managing distinct ways tourist spot data, data-intensive dashboard panels for Tourist, Guide and Admin to cater to varying access levels and CRUD operations.",
+      "Ensuring secure handling of environment variables for both Firebase and MongoDB credentials on the server.",
+      "Optimizing data fetching and state management for large datasets (e.g., packages, users) using TanStack Query to improve client-side performance."
     ],
     improvements: [
-      "Add search and filter features for tours.",
-      "Include a review system and user-generated stories.",
+      "Implementing advanced search, filtering, and sorting features for tours and guides to improve user experience.",
+      "Adding a comprehensive, multi-layered review and rating system that integrates with the user and tour guide profiles.",
+      "Integrating real-time features using WebSockets (e.g., live chat support or notification system for booking updates).",
+      "Refactoring the front-end for improved accessibility (A11Y) and performance optimization, potentially by exploring Server-Side Rendering (SSR).",
+      "Expanding the payment options to include popular local payment gateways in Bangladesh."
     ],
   },
 
