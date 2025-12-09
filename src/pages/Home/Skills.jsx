@@ -66,7 +66,7 @@ const SkillCard = ({ children, title, delay = 0 }) => (
         rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm hover:bg-gray-100 dark:hover:bg-gray-700 
         transition-colors h-full" // Added h-full to ensure cards stretch vertically in the same row
     >
-        <h3 className="text-lg font-semibold text-primary mb-4">{title}</h3>
+        <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-300 mb-4">{title}</h3>
         {children}
     </motion.div>
 );

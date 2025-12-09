@@ -13,29 +13,29 @@ const About = () => {
             >
                 <div className="container pb-5 mx-auto max-w-7xl md:px-16 text-center md:text-left">
                     {/* Heading */}
-                    <h2 className="text-4xl font-bold mb-6 text-primary tracking-wide">
+                    <h2 className="text-4xl font-bold mb-6 text-black dark:text-white tracking-wide">
                         About Me
                     </h2>
 
                     {/* Description */}
                     <p className="text-gray-700 dark:text-gray-400 leading-relaxed text-lg mb-6">
-                        My journey into <span className="text-primary font-semibold">web development</span> began from simple curiosity —
+                        My journey into <span className="text-gray-800 dark:text-gray-300 font-semibold">web development</span> began from simple curiosity —
                         wondering how websites truly work behind the scenes. Over time, this curiosity grew into a deep passion for
-                        crafting <span className="text-primary font-semibold">intuitive user interfaces</span> and writing clean,
+                        crafting <span className="text-gray-800 dark:text-gray-300 font-semibold">intuitive user interfaces</span> and writing clean,
                         efficient code.
                         <br />
                         <br />
-                        When I’m not coding, I enjoy <span className="text-primary font-medium">football</span>, tending to my
-                        <span className="text-primary font-medium"> garden</span>, and exploring new books — keeping both creativity and
+                        When I’m not coding, I enjoy <span className="text-gray-800 dark:text-gray-300 font-medium">football</span>, tending to my
+                        <span className="text-gray-800 dark:text-gray-300 font-medium"> garden</span>, and exploring new books — keeping both creativity and
                         curiosity alive.
                     </p>
 
                     {/* Skills Badges */}
                     <div className="flex  flex-wrap justify-center md:justify-start gap-3 mt-6">
-                        {["JavaScript", "React", "Node.js", "Express", "MongoDB", "Tailwind CSS"].map((skill) => (
+                        {["JavaScript", "Next.js", "React", "Node.js", "Express", "MongoDB", "Tailwind CSS"].map((skill) => (
                             <span
                                 key={skill}
-                                className="badge badge-lg bg-primary/10 text-primary border border-primary/30 hover:bg-primary hover:text-white transition-all duration-300 cursor-default"
+                                className="badge badge-lg bg-primary/10 text-black dark:text-white border border-primary/30 hover:bg-gray-800 dark:hover-bg-white hover:text-white transition-all duration-300 cursor-default"
                             >
                                 {skill}
                             </span>
@@ -53,23 +53,23 @@ const About = () => {
                     <div className="grid text-left grid-cols-2 md:grid-cols-5 gap-6 text-gray-300 text-sm md:text-base">
                         <div>
                             <h3 className="font-semibold text-gray-700 dark:text-gray-400 mb-3">Contact</h3>
-                            <p className="text-primary overflow-hidden font-medium">najmussakib2142@gmail.com</p>
+                            <p className="text-black dark:text-white overflow-hidden font-medium">najmussakib2142@gmail.com</p>
                         </div>
                         <div>
                             <h3 className="font-semibold text-gray-700 dark:text-gray-400 mb-3">Phone</h3>
-                            <p className="text-primary font-medium">+880 1736 007474</p>
+                            <p className="text-black dark:text-white font-medium">+880 1736 007474</p>
                         </div>
                         <div>
                             <h3 className="font-semibold text-gray-700 dark:text-gray-400 mb-3">Date of Birth</h3>
-                            <p className="text-primary font-semibold">October 21, 2000</p>
+                            <p className="text-black dark:text-white font-semibold">October 21, 2000</p>
                         </div>
                         <div>
                             <h3 className="font-semibold text-gray-700 dark:text-gray-400 mb-3">Spoken Languages</h3>
-                            <p className="text-primary font-medium">English – Bengali</p>
+                            <p className="text-black dark:text-white font-medium">English – Bengali</p>
                         </div>
                         <div>
                             <h3 className="font-semibold text-gray-700 dark:text-gray-400 mb-3">Interest</h3>
-                            <p className="text-primary font-medium">Music, Reading, Journey</p>
+                            <p className="text-black dark:text-white font-medium">Music, Reading, Journey</p>
                         </div>
                         <div>
                             <h3 className="font-semibold text-gray-700 dark:text-gray-400 mb-3">Social Media</h3>
@@ -87,7 +87,7 @@ const About = () => {
                                         href={link}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="text-gray-600 dark:text-gray-300 hover:text-primary transition-colors"
+                                        className="text-gray-600  hover:text-gray-800 dark:text-gray-300 transition-colors"
                                     >
                                         <Icon />
                                     </motion.a>

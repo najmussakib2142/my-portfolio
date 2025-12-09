@@ -134,7 +134,7 @@ const ToolsSliderSection = () => {
                   pointer-events-none z-10`}
             ></div>
 
-            <div className="marquee-container overflow-hidden py-6">
+            <div className="marquee-container  overflow-hidden py-6">
               <div className="marquee-content">
                 {renderTools()}
               </div>

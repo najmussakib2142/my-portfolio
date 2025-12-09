@@ -43,19 +43,19 @@ import { FaLaptopCode, FaChartLine, FaShoppingCart, FaMobileAlt, FaRocket, FaUse
 
 const services = [
     {
-        icon: <FaMobileAlt className="text-purple-500 text-3xl" />,
+        icon: <FaMobileAlt className="text-gray-800 dark:text-gray-300 text-3xl" />,
         title: "Responsive Web Design",
         description:
             "Creating mobile-first websites with React and Tailwind CSS or styled-components, ensuring seamless experiences across all devices.",
     },
     {
-        icon: <FaUserCircle className="text-blue-500 text-3xl" />,
+        icon: <FaUserCircle className="text-gray-800 dark:text-gray-300 text-3xl" />,
         title: "Portfolio Websites",
         description:
             "Developing dynamic, interactive portfolios for individuals and startups, showcasing skills, projects, and brand identity effectively.",
     },
     {
-        icon: <FaChartLine className="text-pink-500 text-3xl" />,
+        icon: <FaChartLine className="text-gray-800 dark:text-gray-300 text-3xl" />,
         title: "Interactive Dashboards",
         description:
             "Building data-driven dashboards using the MERN stack with Chart.js or Recharts, helping clients visualize insights clearly and interactively.",

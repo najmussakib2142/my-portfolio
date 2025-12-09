@@ -83,7 +83,7 @@ const ProjectCard = ({ project, reverse }) => {
          dark:border-gray-800  overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 `}
     >
       <div className="md:w-1/2 p-8 flex flex-col justify-center text-left">
-        <h4 className="text-sm font-semibold text-indigo-600 dark:text-indigo-400 mb-2 uppercase tracking-wide">
+        <h4 className="text-sm font-semibold text-gray-600 dark:text-gray-400 mb-2 uppercase tracking-wide">
           {project.category || "Featured Project"}
         </h4>
         <h3 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-gray-100 mb-4">
