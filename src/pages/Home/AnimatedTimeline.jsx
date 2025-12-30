@@ -88,7 +88,7 @@ const TimelineItem = ({ item }) => {
 
     const card = (
         <div className={cardBaseClasses}>
-            <p className="text-sm font-mono text-indigo-700 dark:text-indigo-400 mb-1 tracking-widest">
+            <p className="text-sm font-mono text-gray-800 dark:text-gray-300 mb-1 tracking-widest">
                 {item.year}
             </p>
             <h3 className="text-lg font-bold text-black dark:text-white mb-1">
@@ -117,7 +117,7 @@ const TimelineItem = ({ item }) => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true, amount: 0.4 }}
-            className="relative flex flex-col md:flex-row w-full mb-8"
+            className="relative flex flex-col  md:flex-row w-full mb-8"
         >
 
             {/* LEFT HALF - Renders content ONLY on DESKTOP (md+) if side is LEFT */}
@@ -170,7 +170,7 @@ const TimelineDivider = ({ label }) => (
 // --- Main Timeline Section (UPGRADED FOR MOBILE) ---
 const TimelineSection = () => (
     <section id="education"
-     className="py-12 md:py-16 mx-auto max-w-7xl px-6 md:px-16 text-gray-900 dark:text-gray-100">
+     className="py-12 md:py-16 mx-auto max-w-7xl bg-gradient-to-b from-gray-50 to-white dark:from-[#0e151f] dark:to-[#060d18] px-6 md:px-16 text-gray-900 dark:text-gray-100">
         <div className="container mx-auto">
             {/* Heading */}
             <motion.h2
@@ -180,7 +180,7 @@ const TimelineSection = () => (
                 viewport={{ once: true }}
                 className="text-3xl md:text-4xl font-bold mb-14 text-center"
             >
-                Education & <span className="text-blue-600 dark:text-blue-400">Experience</span>
+                 <span className="text-gray-600 dark:text-gray-300">Education </span>& Experience
             </motion.h2>
 
             {/* Timeline */}

@@ -1,11 +1,15 @@
 import { Link } from "react-router-dom";
 import Lottie from "lottie-react";
 import devAnimation from "../../assets/contact us.json";
+import ocean from "../../../public/ocan.jpg";
+import { FaArrowRight, FaArrowRightArrowLeft } from "react-icons/fa6";
+
 
 const ContactBanner = () => {
     return (
         <section
         id="contact-banner"
+        
             className=" relative bg-gray-100 dark:bg-gray-900 py-12 md:py-16 lg:py-20 text-gray-900 dark:text-white "
         >
             <div className="px-6 max-w-7xl mx-auto md:px-16 flex flex-col md:flex-row items-center justify-between gap-20">
@@ -18,10 +22,10 @@ const ContactBanner = () => {
 
                     <Link
                         to="/contact"
-                        className=" btn mt-4 border-none  bg-indigo-600 hover:bg-indigo-700  text-white  hover:scale-105 transition-transform
+                        className=" btn mt-4 border-none  bg-[#2B65EC] dark:bg-[#2B65EC]  text-white  hover:scale-105 transition-transform
             "
                     >
-                        Say Hello →
+                        Say Hello <FaArrowRight className="ml-01" />
                     </Link>
                 </div>
 

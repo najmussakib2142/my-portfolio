@@ -2,7 +2,7 @@ import { FaEnvelope, FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="relative  bg-indigo-600 dark:bg-indigo-600 text-white pt-30 pb-10">
+    <footer className="relative  bg-gradient-to-t from-[#0F3B8C] to-[#2B65EC] dark:from-[#0F3B8C] dark:to-[#2B65EC] text-white pt-30 pb-10">
       <div className="absolute -top-1 left-0 w-full overflow-hidden leading-none rotate-180">
         <svg
           viewBox="0 0 1200 120"

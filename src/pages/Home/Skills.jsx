@@ -137,7 +137,7 @@ const Skills = () => {
                                 <motion.span
                                     key={skill}
                                     whileHover={{ scale: 1.1 }}
-                                    className="px-3 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 rounded-full font-medium shadow-sm cursor-pointer text-sm"
+                                    className="px-3 py-1 bg-[#2B65EC]/10  dark:bg-[#2B65EC]/20 text-gray-950 dark:text-indigo-200 rounded-full font-medium shadow-sm cursor-pointer text-sm"
                                 >
                                     {skill}
                                 </motion.span>
@@ -156,7 +156,7 @@ const Skills = () => {
                                     whileHover={{ scale: 1.02, x: 6 }}
                                     className="flex  gap-2 text-sm"
                                 >
-                                    <FaCheckCircle className="text-blue-500 w-4 h-4" />
+                                    <FaCheckCircle className="text-gray-700 dark:text-gray-300 w-4 h-4" />
                                     {item}
                                 </motion.li>
                             ))}

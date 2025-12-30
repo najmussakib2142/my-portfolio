@@ -40,10 +40,10 @@ nav a {
 
 /* Active link style */
 nav a.active {
-  color: #2563eb;
+  color: black;
   /* Tailwind blue-600 */
   font-weight: 600;
-  border-bottom: 2px solid #2563eb;
+  border-bottom: 2px solid black;
 }
 
 
@@ -52,7 +52,7 @@ nav a.active {
 
 /* 🌞 Light Theme */
 [data-theme="light"] {
-  --color-primary: #1E88E5;
+  --color-primary: #2B65EC;
   /* Sky Blue - rivers, sky */
   --color-secondary: #F59E0B;
   /* Golden - heritage, warmth */
@@ -83,7 +83,7 @@ nav a.active {
 
 /* 🌙 Dark Theme */
 [data-theme="dark"] {
-  --color-primary: #0EA5E9;
+  --color-primary: #2B65EC;
   /* Bright cyan-blue */
   --color-secondary: #F472B6;
   /* Pink accent */

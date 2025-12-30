@@ -5,7 +5,7 @@ const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [active, setActive] = useState("about");
   const location = useLocation();
-  const navigate = useNavigate(); // new
+  const navigate = useNavigate();
 
   const navItems = useMemo(() => [
     { name: "About", id: "about" },

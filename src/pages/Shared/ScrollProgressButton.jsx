@@ -41,10 +41,11 @@ const ScrollProgressButton = () => {
                             value={progress}
                             strokeWidth={6}
                             styles={buildStyles({
-                                pathColor: "#0ea5e9",
+                                pathColor: "#2B65EC",
                                 trailColor: "#e5e7eb",
                                 pathTransitionDuration: 0.15,
                             })}
+                            
                             className="dark:[&_.CircularProgressbar-path]:stroke-[#225cee]
                          dark:[&_.CircularProgressbar-trail]:stroke-[#1f2937]"
                         />
@@ -56,7 +57,7 @@ const ScrollProgressButton = () => {
                         hover:scale-110 transition-transform duration-300
                         dark:bg-transparent dark:opacity-100 "
                         >
-                            <FaArrowUp size={30} color="#0ea5e9" />
+                            <FaArrowUp size={30} color="#2B65EC" />
                         </button>
                     </div>
                 </div>

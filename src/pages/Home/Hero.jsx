@@ -5,20 +5,20 @@ import { FaGithub, FaLinkedin, FaEnvelope, FaWhatsapp } from "react-icons/fa";
 const Hero = () => {
   const forceDownload = async () => {
     try {
-      const res = await fetch("/my-resume.pdf", { cache: "no-cache" });
+      const res = await fetch("/S_M_Najmus_Sakib_Resume.pdf", { cache: "no-cache" });
       if (!res.ok) throw new Error("Network response was not ok");
       const blob = await res.blob();
       const url = window.URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = url;
-      a.download = "Najmus-Sakib-CV.pdf";
+      a.download = "S_M_Najmus_Sakib_Resume.pdf";
       document.body.appendChild(a);
       a.click();
       a.remove();
       window.URL.revokeObjectURL(url);
     } catch (err) {
       console.error("Download failed:", err);
-      window.open("/my-resume.pdf", "_blank", "noopener,noreferrer");
+      window.open("/S_M_Najmus_Sakib_Resume.pdf", "_blank", "noopener,noreferrer");
     }
   };
 
@@ -69,7 +69,7 @@ const Hero = () => {
                 🚀 View Projects
               </a>
               <a
-                href="https://drive.google.com/file/d/1FyPK7lkl5Mm-EjoVHerNo_y8aOjxkYpL/view"
+                href="https://drive.google.com/file/d/1FyPK7lkl5Mm-EjoVHerNo_y8aOjxkYpL/view?usp=drive_link"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn bg-gray-800 text-white hover:bg-gray-600 transition-colors"

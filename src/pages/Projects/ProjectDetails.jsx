@@ -47,14 +47,14 @@ const ProjectDetails = () => {
         <LightGallery
           speed={500}
           plugins={[lgZoom, lgThumbnail]}
-          elementClassNames="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8"
+          elementClassNames="grid grid-cols-1 md:grid-cols-2  gap-4 mb-8"
         >
           {galleryImages.map((img, idx) => (
             <a key={idx} href={img} className="block rounded overflow-hidden">
               <img
                 src={img}
                 alt={`${project.title} screenshot ${idx + 1}`}
-                className="w-full h-48 object-cover rounded-lg shadow-md hover:scale-105 transition-transform"
+                className="w-full min-h-1/2 object-cover rounded-lg shadow-md hover:scale-105 transition-transform"
               />
             </a>
           ))}

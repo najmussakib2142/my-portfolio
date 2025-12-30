@@ -6,7 +6,7 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="relative max-w-7xl mx-auto py-12 md:py-16 lg:py-20 px-6 md:px-16  transition-colors duration-500"
+      className="relative  max-w-7xl mx-auto py-12 md:py-16 lg:py-20 px-6 md:px-16  transition-colors duration-500"
     >
       <div className=" text-center">
         <motion.h2

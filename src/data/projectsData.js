@@ -3,7 +3,7 @@ export const projects = [
   {
     id: 1,
     title: "SimpleBlog",
-    image: "https://i.ibb.co.com/gMFwbgrX/Screenshot-2025-12-05-070130.png",
+    image: "https://i.ibb.co.com/C38LHXyR/simple-Blog.png",
     description:
       "A modern blogging platform where users can write, explore, and manage articles with enhanced features for search, bookmarks, profiles, and admin control.",
     tech: ["Next.js", "React", "Tailwind CSS", "Framer Motion", "Firebase", "MongoDB", "Mongoose", "Cloudinary", "Firebase Auth"],
