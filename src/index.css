@@ -30,6 +30,19 @@ section {
   /* adjust based on navbar height */
 }
 
+/* @keyframes border-run {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-border-run {
+  animation: border-run 3s linear infinite;
+} */
+
 
 nav a {
   color: gray;

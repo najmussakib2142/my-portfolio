@@ -78,18 +78,30 @@ export const projects = [
     title: "eduCircle",
     image: "https://i.ibb.co.com/7Jt7TXqS/Screenshot-2025-10-23-025813.png",
     description:
-      "An assignment submission and evaluation platform enabling students to submit work and evaluators to provide feedback and grades in real time.",
-    tech: ["React", "Firebase", "Tailwind CSS"],
+      "A full-featured assignment management and evaluation platform with secure submissions, real-time status tracking, and a modern responsive dashboard for students and evaluators.",
+    tech: [
+      "React",
+      "Express",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Cloudinary",
+      "Node.js",
+      "Firebase Authentication",
+      "MongoDB"
+    ],
     liveLink: "https://edu-circle-admin.web.app/",
     clientSide: "https://github.com/najmussakib2142/edu-circle-client",
     ServerSide: "https://github.com/najmussakib2142/edu-circle-server",
     challenges: [
-      "Designing a secure file upload and storage flow using Firebase Storage.",
-      "Implementing evaluator feedback synchronization and live status updates.",
+      "Designing a secure assignment submission workflow with role-based access control.",
+      "Handling real-time evaluator feedback and assignment status synchronization.",
+      "Implementing responsive dashboards that work seamlessly across mobile and desktop.",
+      "Migrating from static image URLs to secure Cloudinary uploads with previews."
     ],
     improvements: [
-      "Add role-based access control and a full-featured admin dashboard.",
-      "Introduce offline submission drafts and mobile-optimized evaluation tools.",
+      "Introduce a full admin analytics dashboard.",
+      "Add offline draft saving for assignments.",
+      "Implement notification system for submission and evaluation updates."
     ],
   },
 

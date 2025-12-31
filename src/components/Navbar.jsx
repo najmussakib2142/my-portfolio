@@ -85,6 +85,14 @@ const Navbar = () => {
           >
             Let's Chat
           </button>
+          {/* <button
+            onClick={() => handleClick("contact-banner")}
+            className="relative inline-flex items-center justify-center px-3 py-1 font-medium text-white dark:text-black bg-black dark:bg-white rounded overflow-hidden group"
+          >
+            <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-black via-gray-500 to-blue-500 animate-border-run"></span>
+            <span className="absolute inset-[2px] bg-black dark:bg-white rounded"></span>
+            <span className="relative z-10">Let's Chat</span>
+          </button> */}
         </div>
 
         {/* Mobile Menu Button */}
