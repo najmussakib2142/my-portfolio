@@ -1,5 +1,6 @@
 import { useState, useEffect, useMemo } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -79,20 +80,35 @@ const Navbar = () => {
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-6">
           {renderNavLinks()}
-          <button
+          {/* <button
             onClick={() => handleClick("contact-banner")}
             className="bg-black cursor-pointer dark:bg-white text-white dark:text-black px-3 py-1 transition hover:scale-105"
           >
             Let's Chat
-          </button>
-          {/* <button
-            onClick={() => handleClick("contact-banner")}
-            className="relative inline-flex items-center justify-center px-3 py-1 font-medium text-white dark:text-black bg-black dark:bg-white rounded overflow-hidden group"
-          >
-            <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-black via-gray-500 to-blue-500 animate-border-run"></span>
-            <span className="absolute inset-[2px] bg-black dark:bg-white rounded"></span>
-            <span className="relative z-10">Let's Chat</span>
           </button> */}
+          <button
+            onClick={() => handleClick("contact-banner")}
+            className="relative p-[2px] overflow-hidden  transition hover:scale-105">
+            {/* The Animated Border Container */}
+            <div className="absolute inset-0">
+              <motion.div
+                animate={{
+                  rotate: [0, 360],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "linear",
+                }}
+                className="absolute inset-[-100%] bg-[conic-gradient(from_0deg,transparent_0deg,transparent_270deg,#3b82f6_360deg)]"
+              />
+            </div>
+
+            {/* The Actual Button Content */}
+            <span className="relative bg-black cursor-pointer dark:bg-white text-white dark:text-black px-3 py-1 transition hover:scale-105 z-10 block  ">
+              Let's Chat
+            </span>
+          </button>
         </div>
 
         {/* Mobile Menu Button */}
@@ -109,7 +125,33 @@ const Navbar = () => {
       {/* Mobile Dropdown */}
       {mobileOpen && (
         <div className="md:hidden bg-white/10 dark:bg-gray-950/50 backdrop-blur-md shadow-md rounded-b-lg transition-all duration-300">
-          <div className="flex flex-col p-4 space-y-2">{renderNavLinks(true)}</div>
+          <div className="flex flex-col p-4 space-y-2">
+            {renderNavLinks(true)}
+            <button
+              onClick={() => handleClick("contact-banner")}
+              className="relative p-[2px] overflow-hidden  transition hover:scale-105">
+              {/* The Animated Border Container */}
+              <div className="absolute inset-0">
+                <motion.div
+                  animate={{
+                    rotate: [0, 360],
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "linear",
+                  }}
+                  className="absolute inset-[-100%] bg-[conic-gradient(from_0deg,transparent_0deg,transparent_270deg,#3b82f6_360deg)]"
+                />
+              </div>
+
+              {/* The Actual Button Content */}
+              <span className="relative bg-black cursor-pointer dark:bg-white text-white dark:text-black px-3 py-1 transition hover:scale-105 z-10 block  ">
+                Let's Chat
+              </span>
+            </button>
+          </div>
+
         </div>
       )}
     </nav>
