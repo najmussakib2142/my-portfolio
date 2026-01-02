@@ -1,12 +1,15 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useRef } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [active, setActive] = useState("about");
   const location = useLocation();
   const navigate = useNavigate();
+  const menuRef = useRef(null);
+  const buttonRef = useRef(null);
 
   const navItems = useMemo(() => [
     { name: "About", id: "about" },
@@ -54,6 +57,34 @@ const Navbar = () => {
     return () => observer.disconnect();
   }, [navItems, location.pathname]);
 
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (
+        mobileOpen &&
+        menuRef.current &&
+        !menuRef.current.contains(e.target) &&
+        buttonRef.current &&
+        !buttonRef.current.contains(e.target)
+      ) {
+        setMobileOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [mobileOpen]);
+
+  // useEffect(() => {
+  //   setMobileOpen(false);
+  // }, [location.pathname]);
+
+  // useEffect(() => {
+  //   const onEsc = (e) => e.key === "Escape" && setMobileOpen(false);
+  //   document.addEventListener("keydown", onEsc);
+  //   return () => document.removeEventListener("keydown", onEsc);
+  // }, []);
+
+
   const renderNavLinks = (isMobile = false) =>
     navItems.map((item) => (
       <button
@@ -62,14 +93,19 @@ const Navbar = () => {
         className={`px-3 py-1 rounded transition-colors cursor-pointer ${active === item.id
           ? "text-primary font-semibold"
           : "text-gray-700 dark:text-gray-200 hover:text-primary"
-          } ${isMobile ? "block w-full text-left" : "inline-block"}`}
+          }
+            ${isMobile
+            ? "w-full text-left py-2 border-b border-gray-300/30 dark:border-gray-700/40 last:border-b-0"
+            : "inline-block"
+          }        
+          `}
       >
         {item.name}
       </button>
     ));
 
   return (
-    <nav className="sticky top-0 left-0 w-full z-50 bg-white/10 dark:bg-gray-950/50 backdrop-blur-md shadow-md transition-all duration-300">
+    <nav className="sticky top-0 left-0 w-full z-50 bg-white/60 dark:bg-gray-950/50 backdrop-blur-md shadow-md transition-all duration-300">
       <div className="max-w-7xl px-3 md:pl-12 md:pr-16 mx-auto flex justify-between items-center py-1">
         {/* Logo */}
         <Link to={"/"} className="text-3xl font-extrabold">
@@ -114,8 +150,9 @@ const Navbar = () => {
         {/* Mobile Menu Button */}
         <div className="md:hidden flex items-center">
           <button
+            ref={buttonRef}
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="text-2xl p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 transition"
+            className="text-2xl p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 transition  duration-200"
           >
             ☰
           </button>
@@ -123,37 +160,45 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Dropdown */}
-      {mobileOpen && (
-        <div className="md:hidden bg-white/10 dark:bg-gray-950/50 backdrop-blur-md shadow-md rounded-b-lg transition-all duration-300">
-          <div className="flex flex-col p-4 space-y-2">
-            {renderNavLinks(true)}
-            <button
-              onClick={() => handleClick("contact-banner")}
-              className="relative p-[2px] overflow-hidden  transition hover:scale-105">
-              {/* The Animated Border Container */}
-              <div className="absolute inset-0">
-                <motion.div
-                  animate={{
-                    rotate: [0, 360],
-                  }}
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    ease: "linear",
-                  }}
-                  className="absolute inset-[-100%] bg-[conic-gradient(from_0deg,transparent_0deg,transparent_270deg,#3b82f6_360deg)]"
-                />
-              </div>
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            ref={menuRef}
+            key="mobile-menu"
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="md:hidden overflow-hidden bg-white/60 dark:bg-gray-950/50 backdrop-blur-md shadow-md rounded-b-lg"
+          >
+            <div className="flex flex-col p-4">
+              {renderNavLinks(true)}
 
-              {/* The Actual Button Content */}
-              <span className="relative bg-black cursor-pointer dark:bg-white text-white dark:text-black px-3 py-1 transition hover:scale-105 z-10 block  ">
-                Let's Chat
-              </span>
-            </button>
-          </div>
+              {/* Mobile CTA */}
+              <motion.button
+                initial={{ opacity: 0, x: -10 }}
+                animate={{ opacity: 1, x: 0 }}
+                // transition={{ delay: index * 0.05 }}
+                onClick={() => handleClick("contact-banner")}
+                className="relative mt-3 p-[2px] overflow-hidden"
+              >
+                <div className="absolute inset-0">
+                  <motion.div
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+                    className="absolute inset-[-100%] bg-[conic-gradient(from_0deg,transparent_0deg,transparent_270deg,#3b82f6_360deg)]"
+                  />
+                </div>
 
-        </div>
-      )}
+                <span className="relative block bg-black dark:bg-white text-white dark:text-black px-3 py-2 z-10">
+                  Let's Chat
+                </span>
+              </motion.button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
     </nav>
   );
 };

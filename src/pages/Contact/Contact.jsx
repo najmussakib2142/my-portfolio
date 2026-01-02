@@ -35,14 +35,14 @@ const Contact = () => {
   return (
     <motion.section
       id="contact"
-      className="pt-15 pb-20 bg-gray-100 dark:bg-gray-900 px-6 md:px-16  transition-colors duration-500"
+      className="pt-15 pb-15 lg:pb-24 min-h-screen bg-gray-100 dark:bg-gray-900 px-8 md:px-18  transition-colors duration-500"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
     >
       {/* Heading */}
-      <div className="text-center mb-12">
+      <div className="text-center mb-12 lg:mb-16">
         <h2 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-black dark:bg-white mb-4">
           Get in Touch
         </h2>
@@ -53,20 +53,20 @@ const Contact = () => {
       </div>
 
       {/* Contact Grid */}
-      <div className="grid md:grid-cols-2 gap-10 max-w-7xl mx-auto">
+      <div className="grid md:grid-cols-5 gap-16  max-w-7xl mx-auto">
         {/* Contact Info */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.2 }}
           viewport={{ once: true }}
-          className="space-y-5 text-left flex flex-col justify-center"
+          className="space-y-5 md:col-span-2 text-left flex flex-col justify-center"
         >
           <h3 className="text-2xl font-semibold text-gray-900 dark:text-gray-100">
             Contact Information
           </h3>
 
-          <div className="space-y-4 text-gray-700 dark:text-gray-300">
+          {/* <div className="space-y-4 text-gray-700 dark:text-gray-300">
             <div className="flex items-center gap-3">
               <FaEnvelope className="text-blue-500" />
               <a
@@ -93,10 +93,25 @@ const Contact = () => {
                 WhatsApp Chat
               </a>
             </div>
+          </div> */}
+
+          <div className="space-y-2 md:space-y-5">
+            <a href="mailto:najmussakib2142@gmail.com" className="group flex items-center gap-4 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+              <div className="p-3 bg-gray-100 dark:bg-gray-800 rounded-full group-hover:bg-blue-50 dark:group-hover:bg-blue-900/30 transition-colors">
+                <FaEnvelope />
+              </div>
+              <span className="text-sm md:text-base">najmussakib2142@gmail.com</span>
+            </a>
+            <a href="tel:+8801736007474" className="group flex items-center gap-4 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+              <div className="p-3 bg-gray-100 dark:bg-gray-800 rounded-full group-hover:bg-blue-50 dark:group-hover:bg-blue-900/30 transition-colors">
+                <FaPhone />
+              </div>
+              <span className="text-sm md:text-base">+880 1736 007474</span>
+            </a>
           </div>
 
           {/* Social Links */}
-          <div className="flex gap-4 mt-6">
+          {/* <div className="flex gap-4 mt-6">
             <a
               href="https://github.com/najmussakib2142"
               target="_blank"
@@ -113,6 +128,29 @@ const Contact = () => {
             >
               <FaLinkedin size={20} className="text-blue-600" />
             </a>
+          </div> */}
+
+          <div>
+            <h3 className="text-sm uppercase tracking-widest font-bold text-gray-400 dark:text-gray-500 mb-6">
+              Social Profiles
+            </h3>
+            <div className="flex gap-4">
+              {[
+                { icon: <FaGithub />, link: "https://github.com/najmussakib2142" },
+                { icon: <FaLinkedin />, link: "https://www.linkedin.com/in/sm-najmus-sakib" },
+                { icon: <FaWhatsapp />, link: "https://wa.me/8801736007474" },
+              ].map((social, idx) => (
+                <a
+                  key={idx}
+                  href={social.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-xl text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-transform hover:-translate-y-1"
+                >
+                  {social.icon}
+                </a>
+              ))}
+            </div>
           </div>
         </motion.div>
 
@@ -123,9 +161,10 @@ const Contact = () => {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.3 }}
           viewport={{ once: true }}
-          className="bg-white/70 dark:bg-gray-900/70 backdrop-blur-md border border-gray-200 dark:border-gray-700 rounded-2xl shadow-xl p-8 space-y-5"
+          className=" dark:bg-gray-900/70 md:col-span-3 space-y-5"
         >
-          <div>
+          <div className="md:flex  gap-4">
+            <div className="flex-1 pb-5 md:pb-0">
             <label className="block mb-2 text-gray-800 dark:text-gray-200 font-medium">
               Your Name
             </label>
@@ -138,7 +177,7 @@ const Contact = () => {
             />
           </div>
 
-          <div>
+          <div className="flex-1">
             <label className="block mb-2 text-gray-800 dark:text-gray-200 font-medium">
               Email
             </label>
@@ -149,6 +188,7 @@ const Contact = () => {
               placeholder="Enter your email"
               required
             />
+          </div>
           </div>
 
           <div>
