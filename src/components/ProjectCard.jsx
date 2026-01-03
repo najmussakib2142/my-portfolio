@@ -31,6 +31,8 @@ import { FaPalette, FaServer, FaNetworkWired } from "react-icons/fa";
 import { RxArrowTopRight } from "react-icons/rx";
 
 
+
+
 const ProjectCard = ({ project, reverse }) => {
 
   const techIcons = {
