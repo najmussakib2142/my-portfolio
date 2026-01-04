@@ -113,11 +113,17 @@ const TimelineItem = ({ item }) => {
 
     return (
         <motion.div
-            initial={{ opacity: 0, x: isRight ? 50 : -50 }}
+            // initial={{ opacity: 0, x: isRight ? 50 : -50 }}
+            // initial={{
+            //     opacity: 0,
+            //     x: window.innerWidth >= 768 ? (isRight ? 50 : -50) : 0,
+            //     y: window.innerWidth < 768 ? 20 : 0,
+            // }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true, amount: 0.4 }}
-            className="relative flex flex-col  md:flex-row w-full mb-8"
+            className="relative flex flex-col  md:flex-row w-full mb-8 overflow-visible"
         >
 
             {/* LEFT HALF - Renders content ONLY on DESKTOP (md+) if side is LEFT */}
@@ -126,7 +132,7 @@ const TimelineItem = ({ item }) => {
             </div>
 
             {/* CENTER CIRCLE - Mobile-adjusted positioning: left:0 on mobile, centered on desktop */}
-            <div className="absolute  md:left-1/2 transform md:-translate-x-1/2 top-5/12  md:top-5/12 left-0  z-10 
+            <div className="absolute   md:left-1/2 transform md:-translate-x-1/2 top-1/2  md:top-5/12 -translate-y-1/2 left-0  z-20 
                         w-6 h-6 md:w-8 md:h-8 rounded-full bg-gray-200 dark:bg-black flex items-center justify-center
                         shadow-lg ring-4 ring-gray-400 dark:ring-gray-900">
                 <div
@@ -140,13 +146,24 @@ const TimelineItem = ({ item }) => {
             {/* pl-8 ensures content starts after the icon on mobile */}
             <div className={`w-full md:w-1/2 flex justify-start pl-8 md:pl-8`}>
                 {/* Desktop right card */}
-                {isRight && wrappedCard}
+                {isRight && <div className="relative z-30">{wrappedCard}</div>}
 
                 {/* Mobile card: always display the content, hidden on desktop if it's a left item */}
                 <div className={`w-full md:hidden ${!isRight ? '' : 'hidden'}`}>
-                    {wrappedCard}
+                    <div className="relative z-30">{wrappedCard}</div>
                 </div>
             </div>
+
+            {/* Mobile connector */}
+            <div className=" absolute top-1/2 left-6 h-px w-6 bg-gray-400 dark:bg-gray-700   md:hidden z-0"
+            />
+
+            {/* Desktop connector */}
+            <div  className={` absolute top-2/5 h-px w-10 bg-gray-400 dark:bg-gray-700 hidden md:block z-0
+             ${isRight ? 'md:left-1/2 md:translate-x-4' : 'md:right-1/2 md:translate-x-1.5'} `}
+            />
+
+
         </motion.div>
     );
 };
@@ -154,7 +171,7 @@ const TimelineItem = ({ item }) => {
 // --- Timeline Divider ---
 const TimelineDivider = ({ label }) => (
     <div className="relative my-12 md:my-14 flex justify-center w-full">
-        <div className="absolute top-1/2 left-0 right-0 h-px bg-gray-700/50 dark:bg-gray-800 transform -translate-y-1/2"></div>
+        <div className="absolute top-1/2 left-3 right-0 h-px bg-gray-700/50 dark:bg-gray-800 transform -translate-y-1/2"></div>
         <motion.span
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -170,7 +187,7 @@ const TimelineDivider = ({ label }) => (
 // --- Main Timeline Section (UPGRADED FOR MOBILE) ---
 const TimelineSection = () => (
     <section id="education"
-     className="py-12 md:py-16 mx-auto max-w-7xl bg-gradient-to-b from-gray-50 to-white dark:from-[#0e151f] dark:to-[#060d18] px-6 md:px-16 text-gray-900 dark:text-gray-100">
+        className="py-12 overflow-x-hidden md:py-16 mx-auto max-w-7xl bg-gradient-to-b from-gray-50 to-white dark:from-[#0e151f] dark:to-[#060d18] px-7 md:px-16 text-gray-900 dark:text-gray-100">
         <div className="container mx-auto">
             {/* Heading */}
             <motion.h2
@@ -180,7 +197,7 @@ const TimelineSection = () => (
                 viewport={{ once: true }}
                 className="text-3xl md:text-4xl font-bold mb-14 text-center"
             >
-                 <span className="text-gray-600 dark:text-gray-300">Education </span>& Experience
+                <span className="text-gray-600 dark:text-gray-300">Education </span>& Experience
             </motion.h2>
 
             {/* Timeline */}
