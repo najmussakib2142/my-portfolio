@@ -35,29 +35,29 @@ const ProjectDetails = () => {
         transition={{ duration: 0.4 }}
       >
         {/* Breadcrumbs */}
-        <nav className="flex items-center gap-2 mb-4 text-xs md:text-sm  tracking-wider text-gray-500 dark:text-gray-400">
+        <nav className="flex items-center md:gap-1 mb-4 text-xs md:text-sm  tracking-wider text-gray-500 dark:text-gray-400">
           <Link to="/" className="hover:text-blue-600 -ml-4 transition-colors">Home</Link>
           <span>/</span>
           <HashLink smooth to="/#projects" className="hover:text-blue-600 transition-colors">Projects</HashLink>
           <span>/</span>
-          <span className="text-blue-500 font-semibold">{project.title}</span>
+          <span className="text-blue-500 pl-3 font-semibold">{project.title}</span>
         </nav>
 
         {/* Header */}
         <motion.h1
-  className="text-4xl font-bold mb-6 text-gray-900 dark:text-gray-100"
-  // 1. Use "willChange" to tell the browser to optimize rendering
-  // 2. Add "antialiased" to clean up the edges
-  style={{ 
-    willChange: "transform, opacity", 
-    WebkitFontSmoothing: "antialiased" 
-  }}
-  initial={{ opacity: 0, y: 10 }} // Reduce the distance (from 30 to 10) to reduce jitter
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.4, ease: "easeOut" }}
->
-  {project.title}
-</motion.h1>
+          className="text-4xl font-bold mb-6 text-gray-900 dark:text-gray-100"
+          // 1. Use "willChange" to tell the browser to optimize rendering
+          // 2. Add "antialiased" to clean up the edges
+          style={{
+            willChange: "transform, opacity",
+            WebkitFontSmoothing: "antialiased"
+          }}
+          initial={{ opacity: 0, y: 10 }} // Reduce the distance (from 30 to 10) to reduce jitter
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
+        >
+          {project.title}
+        </motion.h1>
 
         {/* LightGallery */}
         <LightGallery
@@ -97,10 +97,8 @@ const ProjectDetails = () => {
               // </span>
               <span
                 key={t}
-                className="px-4 py-1.5 text-xs font-semibold bg-white dark:bg-gray-800 
-             border border-gray-200 dark:border-gray-700 rounded-lg 
-             text-gray-700 dark:text-gray-300 shadow-sm 
-             hover:border-blue-500 dark:hover:border-blue-400 transition-colors"
+                className="badge badge-lg bg-primary/10 text-black dark:text-white border border-primary/30 hover:bg-gray-800 dark:hover-bg-white hover:text-white transition-all duration-300 cursor-default"
+
               >
                 {t}
               </span>
@@ -160,7 +158,7 @@ const ProjectDetails = () => {
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center gap-2 btn btn-primary bg-blue-600 hover:bg-blue-700 text-white border-none transition-all shadow-lg"
-                aria-label={`Live demo of ${project.title}`}
+                // aria-label={`Live demo of ${project.title}`}
               >
                 Live Demo <FaExternalLinkAlt size={14} />
               </a>
