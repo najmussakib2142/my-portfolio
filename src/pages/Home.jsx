@@ -1,4 +1,3 @@
-// import { useEffect, useState } from "react";
 import Contact from "./Contact/Contact";
 import Education from "./Home/Education";
 import Hero from "./Home/Hero";
@@ -21,18 +20,6 @@ import ToggleLogic from "./Home/ToggleLogic";
 
 
 const Home = () => {
-
-  // const [showTopBtn, setShowTopBtn] = useState(false);
-
-  // useEffect(() => {
-  //   AOS.init({ duration: 1000, once: true, easing: "ease-in-out" });
-  //   window.addEventListener("scroll", () => {
-  //     if (window.scrollY > 300) setShowTopBtn(true);
-  //     else setShowTopBtn(false);
-  //   });
-  // }, []);
-
-  // const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
  const location = useLocation();
 
  useEffect(() => {
@@ -40,7 +27,6 @@ const Home = () => {
       const id = location.hash.replace("#", "");
       const section = document.getElementById(id);
       if (section) {
-        // smooth scroll after a tiny delay to ensure section exists
         setTimeout(() => {
           section.scrollIntoView({ behavior: "smooth" });
         }, 50);
@@ -51,7 +37,6 @@ const Home = () => {
   return (
     
     <div className=" text-center">
-      {/* <Banner></Banner> */}
       <Hero></Hero>
       <About></About>
       <ToolsSliderSection></ToolsSliderSection>
@@ -59,22 +44,10 @@ const Home = () => {
       {/* <ToggleLogic></ToggleLogic> */}
       <ServicesSection></ServicesSection>
       <Skills></Skills>
-      {/* <Education></Education> */}
       <AnimatedTimeline></AnimatedTimeline>
       <Projects></Projects>
       <ContactBanner></ContactBanner>
-      {/* <Contact></Contact> */}
-
       <ScrollProgressButton></ScrollProgressButton>
-      {/* {showTopBtn && (
-        <button
-          onClick={scrollToTop}
-          className="fixed cursor-pointer bottom-6 right-6 p-3 rounded-full bg-primary text-white shadow-lg hover:bg-primary-focus transition"
-        >
-          <FaArrowUp />
-        </button>
-      )} */}
-
     </div>
   );
 };

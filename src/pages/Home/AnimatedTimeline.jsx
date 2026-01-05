@@ -114,11 +114,7 @@ const TimelineItem = ({ item }) => {
     return (
         <motion.div
             // initial={{ opacity: 0, x: isRight ? 50 : -50 }}
-            // initial={{
-            //     opacity: 0,
-            //     x: window.innerWidth >= 768 ? (isRight ? 50 : -50) : 0,
-            //     y: window.innerWidth < 768 ? 20 : 0,
-            // }}
+
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
@@ -159,7 +155,7 @@ const TimelineItem = ({ item }) => {
             />
 
             {/* Desktop connector */}
-            <div  className={` absolute top-2/5 h-px w-10 bg-gray-400 dark:bg-gray-700 hidden md:block z-0
+            <div className={` absolute top-2/5 h-px w-10 bg-gray-400 dark:bg-gray-700 hidden md:block z-0
              ${isRight ? 'md:left-1/2 md:translate-x-4' : 'md:right-1/2 md:translate-x-1.5'} `}
             />
 
@@ -187,31 +183,34 @@ const TimelineDivider = ({ label }) => (
 // --- Main Timeline Section (UPGRADED FOR MOBILE) ---
 const TimelineSection = () => (
     <section id="education"
-        className="py-12 overflow-x-hidden md:py-16 mx-auto max-w-7xl bg-gradient-to-b from-gray-50 to-white dark:from-[#0e151f] dark:to-[#060d18] px-7 md:px-16 text-gray-900 dark:text-gray-100">
-        <div className="container mx-auto">
-            {/* Heading */}
-            <motion.h2
-                initial={{ opacity: 0, y: -20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-                className="text-3xl md:text-4xl font-bold mb-14 text-center"
-            >
-                <span className="text-gray-600 dark:text-gray-300">Education </span>& Experience
-            </motion.h2>
+    className="bg-gradient-to-b from-gray-50 to-white dark:from-[#0e151f] dark:to-[#060d18]"
+        >
+        <div className="py-12 overflow-x-hidden md:py-16 mx-auto max-w-7xl  px-7 md:px-16 text-gray-900 dark:text-gray-100">
+            <div className="container mx-auto">
+                {/* Heading */}
+                <motion.h2
+                    initial={{ opacity: 0, y: -20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
+                    viewport={{ once: true }}
+                    className="text-3xl md:text-4xl font-bold mb-14 text-center"
+                >
+                    <span className="text-gray-600 dark:text-gray-300">Education </span>& Experience
+                </motion.h2>
 
-            {/* Timeline */}
-            <div className="relative">
-                {/* Vertical line: On mobile, it's on the far left (left-3). On desktop, it's centered (md:left-1/2). */}
-                <div className="absolute left-3 md:left-1/2 transform md:-translate-x-1/2 w-0.5 bg-gray-700/50 dark:bg-gray-800 h-full"></div>
+                {/* Timeline */}
+                <div className="relative">
+                    {/* Vertical line: On mobile, it's on the far left (left-3). On desktop, it's centered (md:left-1/2). */}
+                    <div className="absolute left-3 md:left-1/2 transform md:-translate-x-1/2 w-0.5 bg-gray-700/50 dark:bg-gray-800 h-full"></div>
 
-                {timelineData.map((item, index) =>
-                    item.type === "divider" ? (
-                        <TimelineDivider key={index} label={item.label} />
-                    ) : (
-                        <TimelineItem key={index} item={item} />
-                    )
-                )}
+                    {timelineData.map((item, index) =>
+                        item.type === "divider" ? (
+                            <TimelineDivider key={index} label={item.label} />
+                        ) : (
+                            <TimelineItem key={index} item={item} />
+                        )
+                    )}
+                </div>
             </div>
         </div>
     </section>

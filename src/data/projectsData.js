@@ -9,7 +9,7 @@ export const projects = [
     tech: ["Next.js", "React", "Tailwind CSS", "Framer Motion", "Firebase", "MongoDB", "Mongoose", "Cloudinary", "Firebase Auth"],
     liveLink: "https://simple-blog-website-brown.vercel.app/",
     clientSide: "https://github.com/najmussakib2142/simple-blog-website",
-    ServerSide: "https://github.com/najmussakib2142/simple-blog-website",
+    // ServerSide: "https://github.com/najmussakib2142/simple-blog-website",
     "keyFeatures": [
       "✍️ Write & publish articles with full CRUD operations",
       "📖 Read & explore blogs with dynamic category and keyword search",
