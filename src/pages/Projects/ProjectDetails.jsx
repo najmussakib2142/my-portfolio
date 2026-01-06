@@ -1,6 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { FaExternalLinkAlt, FaGithub, FaArrowLeft } from "react-icons/fa";
+import { FaExternalLinkAlt, FaGithub, FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { projects } from "../../data/projectsData";
 import { HashLink } from "react-router-hash-link";
 
@@ -89,16 +89,9 @@ const ProjectDetails = () => {
           </h3>
           <div className="flex flex-wrap gap-2">
             {project.tech.map((t) => (
-              // <span
-              //   key={t}
-              //   className="px-3 py-1 text-sm font-medium bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-full text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition"
-              // >
-              //   {t}
-              // </span>
               <span
                 key={t}
                 className="badge badge-lg bg-primary/10 text-black dark:text-white border border-primary/30 hover:bg-gray-800 dark:hover-bg-white hover:text-white transition-all duration-300 cursor-default"
-
               >
                 {t}
               </span>
@@ -150,49 +143,47 @@ const ProjectDetails = () => {
         )}
 
         {/* Buttons */}
-        <div className="">
-          <div className="flex flex-wrap gap-4 mt-10">
+        <div className="flex flex-col gap-6 mt-10">
+          <div className="flex flex-wrap gap-4">
+            {/* Primary Action: Live Demo */}
             {project.liveLink && (
               <a
                 href={project.liveLink}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-2 btn btn-primary bg-blue-600 hover:bg-blue-700 text-white border-none transition-all shadow-lg"
-                // aria-label={`Live demo of ${project.title}`}
+                className="group relative flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-medium   transition-all duration-300 active:scale-95"
               >
-                Live Demo <FaExternalLinkAlt size={14} />
+                Live Demo
+                <FaArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+
               </a>
             )}
 
-            {project.clientSide && (
+            {/* Secondary Actions: GitHub Links */}
+            {[
+              { link: project.clientSide, label: "Client Code" },
+              { link: project.ServerSide, label: "Server Code" }
+            ].map((btn, idx) => btn.link && (
               <a
-                href={project.clientSide}
+                key={idx}
+                href={btn.link}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-2 btn btn-outline border-gray-400 dark:border-gray-600 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+                className="group flex items-center gap-2 px-6 py-3 border border-gray-300 dark:border-gray-700 dark:bg-gray-900/50 backdrop-blur-sm  hover:bg-gray-100 dark:hover:bg-gray-800 transition-all active:scale-95"
               >
-                Client Code <FaGithub size={16} />
+                {btn.label} <FaGithub size={18} className="text-black/80 dark:text-white/80 group-hover:text-black dark:group-hover:text-white" />
               </a>
-            )}
-
-            {project.ServerSide && (
-              <a
-                href={project.ServerSide}
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center gap-2 btn btn-outline border-gray-400 dark:border-gray-600 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
-              >
-                Server Code <FaGithub size={16} />
-              </a>
-            )}
-
+            ))}
           </div>
+
+          {/* Navigation Action: Back Button */}
           <HashLink
             smooth
             to="/#projects"
-            className="mt-3 w-fit inline-flex items-center gap-2 btn bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 border-none transition"
+            className="flex mt-3 items-center gap-2 text-sm font-semibold text-gray-500 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 transition-colors w-fit group"
           >
-            <FaArrowLeft /> Back to Project
+            <FaArrowLeft className="group-hover:-translate-x-1 transition-transform" />
+            Back to Projects
           </HashLink>
         </div>
       </motion.div>

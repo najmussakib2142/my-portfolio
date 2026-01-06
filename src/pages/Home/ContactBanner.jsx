@@ -8,8 +8,8 @@ import { FaArrowRight, FaArrowRightArrowLeft } from "react-icons/fa6";
 const ContactBanner = () => {
     return (
         <section
-        id="contact-banner"
-        
+            id="contact-banner"
+
             className=" relative bg-gray-100 dark:bg-gray-900 py-12 md:py-16 lg:py-20 text-gray-900 dark:text-white "
         >
             <div className="px-6 max-w-7xl mx-auto md:px-16 flex flex-col md:flex-row items-center justify-between gap-20">
@@ -22,10 +22,12 @@ const ContactBanner = () => {
 
                     <Link
                         to="/contact"
-                        className=" btn mt-4 border-none  bg-[#2B65EC] dark:bg-[#2B65EC]  text-white  hover:scale-105 transition-transform
-            "
+                        className="group px-4 py-2.5 inline-flex items-center gap-2 mt-4 border-none  bg-[#2B65EC] dark:bg-[#2B65EC]  text-white  hover:scale-103 transition-transform duration-300 "
                     >
-                        Say Hello <FaArrowRight className="ml-01" />
+                        Say Hello
+                        {/* <ArrowRight className="text-black/60 transition-all duration-300 group-hover:text-black group-hover:translate-x-1" /> */}
+
+                        <FaArrowRight className="text-white/80  transition-all duration-300 group-hover:text-white group-hover:translate-x-1" />
                     </Link>
                 </div>
 

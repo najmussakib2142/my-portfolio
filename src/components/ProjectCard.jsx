@@ -23,12 +23,12 @@ import {
   SiVite,
   SiNetlify,
   // SiVisualstudiocode,
-  
+
   SiReactquery, SiCloudinary
 } from "react-icons/si";
 import { RiNextjsFill } from "react-icons/ri";
 import { FaPalette, FaServer, FaNetworkWired } from "react-icons/fa";
-import { RxArrowTopRight } from "react-icons/rx";
+import { FaArrowUpRightFromSquare, FaArrowRight } from "react-icons/fa6";
 
 
 
@@ -107,13 +107,32 @@ const ProjectCard = ({ project, reverse }) => {
 
         <Link
           to={`/projects/${project.id}`}
-          className="w-fit inline-flex px-4 py-2 border border-gray-200 dark:border-gray-800 text-sm font-medium text-gray-600 dark:text-gray-300 hover:underline"
+          className="group w-fit inline-flex mt-2 px-5 py-3 border border-gray-300 dark:border-gray-800 
+             text-sm font-medium hover:bg-black dark:hover:bg-white 
+             text-gray-600 dark:text-gray-300 hover:text-white dark:hover:text-black 
+             transition-colors duration-300"
         >
-          <div className="flex justify-between items-center gap-1">
-            View Project  <RxArrowTopRight />
-          </div>
+          <div className="flex items-center gap-1">
+            View Project
+            <span className="relative w-4 h-4 ml-1 inline-block overflow-hidden">
 
+              {/* Initial Icon */}
+              <FaArrowUpRightFromSquare
+                className="absolute inset-0 w-4 h-4 transition-all duration-300 
+                   opacity-100 translate-y-0 
+                   group-hover:opacity-0 group-hover:-translate-y-1"
+              />
+
+              {/* Hover Icon */}
+              <FaArrowRight
+                className="absolute inset-0 w-4 h-4 transition-all duration-300 
+                   opacity-0 translate-y-1 
+                   group-hover:opacity-100 group-hover:translate-y-0"
+              />
+            </span>
+          </div>
         </Link>
+
       </div>
 
       <div className="md:w-1/2  overflow-hidden relative group">

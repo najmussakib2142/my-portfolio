@@ -10,32 +10,29 @@ export const projects = [
     liveLink: "https://simple-blog-website-brown.vercel.app/",
     clientSide: "https://github.com/najmussakib2142/simple-blog-website",
     // ServerSide: "https://github.com/najmussakib2142/simple-blog-website",
-    "keyFeatures": [
-      "✍️ Write & publish articles with full CRUD operations",
-      "📖 Read & explore blogs with dynamic category and keyword search",
-      "⭐ Bookmark your favorite blogs for quick access",
-      "👤 User Profiles with Firebase authentication and secure API access",
-      "🛡 Admin Role-Based Access Control (RBAC) for managing blogs",
-      "⚡ Fast, responsive, and interactive UI with Tailwind CSS, DaisyUI & Framer Motion",
-      "💾 MongoDB backend with server-side APIs",
-      "🌐 Cloudinary image uploads for blog posts",
-      "🔗 Dynamic routing for individual blog pages",
-      "💻 Smooth animations and reusable components",
-      "🚀 Production-ready deployment on Vercel"
+    keyFeatures: [
+      "Create, edit, and delete blog posts with full CRUD functionality",
+      "Search and filter blogs by category and keywords",
+      "Bookmark favorite articles for quick access",
+      "Secure user authentication with Firebase",
+      "Admin-only access for managing and moderating blogs",
+      "Image uploads handled securely via Cloudinary",
+      "Responsive and animated UI built with Tailwind CSS and Framer Motion"
     ],
+
     challenges: [
-      "Implementing secure RBAC for admin vs regular users",
-      "Ensuring real-time sync and pagination in BlogsClient",
-      "Handling modal-based editing with proper DB connection",
-      "Integrating Firebase Auth with Cloudinary image uploads",
-      "Creating a full-featured search and category filter system"
+      "Implementing secure role-based access control for admin and users",
+      "Managing pagination and real-time updates for blog listings",
+      "Synchronizing Firebase authentication with backend APIs",
+      "Handling modal-based editing without breaking data consistency"
     ],
+
     improvements: [
-      "Add messaging or commenting features for blog posts",
-      "Enable post moderation, recommendations, and trending blogs",
-      "Optimize performance for larger datasets and high traffic",
-      "Add analytics and dashboards for blog engagement"
-    ],
+      "Add comments and user interaction on blog posts",
+      "Introduce blog recommendations and trending sections",
+      "Optimize performance for large numbers of posts",
+      "Add analytics for views and engagement"
+    ]
   },
   {
     id: 2,
@@ -56,26 +53,35 @@ export const projects = [
     liveLink: "https://explore-bd-admin.web.app/",
     clientSide: "https://github.com/najmussakib2142/explore-bd-client",
     ServerSide: "https://github.com/najmussakib2142/explore-bd-server",
+    keyFeatures: [
+      "Role-based dashboards for Tourists, Guides, and Admins",
+      "Secure authentication using JWT and Firebase Admin SDK",
+      "Tour booking and payment processing with Stripe",
+      "Admin controls for managing users, tours, and destinations",
+      "Efficient data fetching and caching with TanStack Query",
+      "Responsive UI with smooth animations"
+    ],
+
     challenges: [
-      "Implementing robust JWT authentication across the MERN stack and securing protected routes based on three distinct user roles (Tourist, Guide, Admin).",
-      "Successfully integrating the Firebase Admin SDK on the Node/Express backend for secure user authentication and role management, which involved complex server-side verification.",
-      "Handling sensitive real-time payment processing and webhooks using the Stripe payment gateway for tour bookings.",
-      "Designing and managing distinct ways tourist spot data, data-intensive dashboard panels for Tourist, Guide and Admin to cater to varying access levels and CRUD operations.",
-      "Ensuring secure handling of environment variables for both Firebase and MongoDB credentials on the server.",
-      "Optimizing data fetching and state management for large datasets (e.g., packages, users) using TanStack Query to improve client-side performance."
+      "Designing secure authentication for multiple user roles",
+      "Integrating Stripe payments and handling sensitive transactions",
+      "Managing complex dashboards with different permissions",
+      "Optimizing performance for large datasets",
+      "Safely handling environment variables and credentials"
     ],
+
     improvements: [
-      "Implementing advanced search, filtering, and sorting features for tours and guides to improve user experience.",
-      "Adding a comprehensive, multi-layered review and rating system that integrates with the user and tour guide profiles.",
-      "Integrating real-time features using WebSockets (e.g., live chat support or notification system for booking updates).",
-      "Refactoring the front-end for improved accessibility (A11Y) and performance optimization, potentially by exploring Server-Side Rendering (SSR).",
-      "Expanding the payment options to include popular local payment gateways in Bangladesh."
-    ],
+      "Advanced search and filtering for tours and guides",
+      "Review and rating system for guides and destinations",
+      "Real-time notifications or live chat features",
+      "Accessibility (A11Y) and performance improvements",
+      "Support for local Bangladeshi payment gateways"
+    ]
   },
 
   {
     id: 3,
-    title: "eduCircle",
+    title: "EduCircle",
     image: "https://i.ibb.co.com/7Jt7TXqS/Screenshot-2025-10-23-025813.png",
     description:
       "A full-featured assignment management and evaluation platform with secure submissions, real-time status tracking, and a modern responsive dashboard for students and evaluators.",
@@ -92,17 +98,26 @@ export const projects = [
     liveLink: "https://edu-circle-admin.web.app/",
     clientSide: "https://github.com/najmussakib2142/edu-circle-client",
     ServerSide: "https://github.com/najmussakib2142/edu-circle-server",
+    keyFeatures: [
+      "Secure assignment submission with file uploads",
+      "Role-based access for students and evaluators",
+      "Real-time status updates for submissions",
+      "Evaluator feedback and grading workflow",
+      "Responsive dashboards for all user roles"
+    ],
+
     challenges: [
-      "Designing a secure assignment submission workflow with role-based access control.",
-      "Handling real-time evaluator feedback and assignment status synchronization.",
-      "Implementing responsive dashboards that work seamlessly across mobile and desktop.",
-      "Migrating from static image URLs to secure Cloudinary uploads with previews."
+      "Designing a secure submission and evaluation flow",
+      "Keeping assignment status and feedback in sync",
+      "Building dashboards that work well on all devices",
+      "Migrating to Cloudinary for secure file handling"
     ],
+
     improvements: [
-      "Introduce a full admin analytics dashboard.",
-      "Add offline draft saving for assignments.",
-      "Implement notification system for submission and evaluation updates."
-    ],
+      "Add analytics for assignment performance",
+      "Offline draft saving for submissions",
+      "Notification system for submission and feedback updates"
+    ]
   },
 
 

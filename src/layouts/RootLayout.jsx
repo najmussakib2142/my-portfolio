@@ -19,8 +19,8 @@ const RootLayout = () => {
 
             <button
                 onClick={toggleTheme}
-                className=" fixed cursor-pointer right-0 bottom-1/4 md:top-1/2 md:-translate-y-1/2 md:bottom-auto z-50 flex items-center justify-center bg-gray-200
-                 dark:bg-gray-800 text-gray-900 dark:text-white w-12 h-12 md:w-11 md:h-11 rounded-l-2xl shadow-md hover:shadow-lg hover:scale-105
+                className=" fixed cursor-pointer left-0 bottom-1/4 md:top-1/2 md:-translate-y-1/2 md:bottom-auto z-50 flex items-center justify-center bg-gray-200
+                 dark:bg-gray-800 text-gray-900 dark:text-white w-12 h-12 md:w-11 md:h-11 rounded-r-xl shadow-md hover:shadow-lg hover:scale-105
                   transition-transform duration-300 focus:outline-none "
             >
                 {theme === "dark" ? (

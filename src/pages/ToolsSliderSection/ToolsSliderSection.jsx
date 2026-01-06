@@ -9,20 +9,24 @@ import {
   SiFigma,
   SiGithub,
   SiFirebase,
+  SiNextdotjs,
+  SiCloudinary,
 } from "react-icons/si";
 import { FaKey } from "react-icons/fa";
 
 const tools = [
   { icon: <SiReact className="text-cyan-400" />, name: "React" },
+  { icon: <SiNextdotjs className="text-black dark:text-white" />, name: "Next.js" },
   { icon: <SiNodedotjs className="text-green-600" />, name: "Node.js" },
-  { icon: <SiExpress className="text-gray-200 dark:text-gray-400" />, name: "Express.js" },
+  { icon: <SiExpress className="text-gray-300 dark:text-gray-400" />, name: "Express.js" },
   { icon: <SiMongodb className="text-green-500" />, name: "MongoDB" },
   { icon: <SiTailwindcss className="text-sky-400" />, name: "Tailwind CSS" },
-  { icon: <FaKey className="text-yellow-400" />, name: "JWT" },
-  { icon: <SiFigma className="text-pink-500" />, name: "Figma" },
   { icon: <SiFirebase className="text-orange-400" />, name: "Firebase" },
+  { icon: <SiCloudinary className="text-blue-500" />, name: "Cloudinary" },
+  { icon: <FaKey className="text-yellow-400" />, name: "JWT" },
   { icon: <SiGithub className="text-gray-900 dark:text-white" />, name: "GitHub" },
 ];
+
 
 
 const MarqueeStyles = () => (
