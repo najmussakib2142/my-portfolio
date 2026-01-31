@@ -46,11 +46,12 @@ const Projects = () => {
         </motion.p>
       </div>
 
-      <div className="space-y-0 border dark:border-gray-800 border-gray-200">
+      <div className="space-y-6 ">
         {isLoading
           ? // 3. Show Skeletons while loading
             [1, 2, 3].map((_, index) => (
-              <ProjectCardSkeleton key={index} reverse={index % 2 !== 0} />
+              <ProjectCardSkeleton key={index}  />
+              // <ProjectCardSkeleton key={index} reverse={index % 2 !== 0} />
             ))
           : // 4. Show actual Projects when loaded
             projects.map((project, index) => (
@@ -58,10 +59,11 @@ const Projects = () => {
                 key={project.id}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                transition={{ duration: 0.9, delay: index * 0.3 }}
                 viewport={{ once: true }}
               >
-                <ProjectCard project={project} reverse={index % 2 !== 0} />
+                {/* <ProjectCard project={project} reverse={index % 2 !== 0} /> */}
+                <ProjectCard project={project}  />
               </motion.div>
             ))}
       </div>

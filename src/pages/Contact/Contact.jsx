@@ -53,7 +53,7 @@ const Contact = () => {
       </div>
 
       {/* Contact Grid */}
-      <div className="grid md:grid-cols-5 gap-16  max-w-7xl mx-auto">
+      <div className="grid md:grid-cols-5 gap-16  px-6 max-w-7xl  md:px-16  mx-auto">
         {/* Contact Info */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}

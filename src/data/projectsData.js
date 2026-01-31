@@ -119,6 +119,54 @@ export const projects = [
       "Notification system for submission and feedback updates"
     ]
   },
+  {
+    id: 4,
+    title: "HobbyHub",
+    image: "https://i.ibb.co.com/Rk844ptY/Screenshot-2026-02-01-000027.png",
+    description:
+      "HobbyHub is a community-driven platform designed to help people discover new hobbies, join groups, and share their creative journeys. The app dynamically displays curated YouTube videos based on each hobby category or group, making learning more accessible and engaging. Users can explore communities, share posts, and track progress in an intuitive, social environment.",
+    tech: [
+      "React",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Tailwind CSS",
+      "Firebase Auth",
+      "Cloudinary",
+      "TanStack Query",
+      "YouTube Data API",
+      "JWT"
+    ],
+    liveLink: "https://hobby-hub-discovery.web.app/",
+    clientSide: "https://github.com/najmussakib2142/hobby-hub-client",
+    ServerSide: "https://github.com/najmussakib2142/hobby-hub-server",
+
+    keyFeatures: [
+      "User authentication with Firebase and JWT",
+      "Hobby groups with personalized feeds and community posts",
+      "Dynamic suggested videos for each group using YouTube Data API",
+      "Real-time updates using Socket.io (comments, interactions)",
+      "Profile customization and hobby progress tracking",
+      "Secure media uploading with Cloudinary",
+      "Clean and responsive UI powered by Tailwind and TanStack Query"
+    ],
+
+    challenges: [
+      "Efficiently integrating YouTube Data API to fetch relevant videos",
+      "Avoiding API quota limits with optimized request handling",
+      "Managing complex relationships between groups, posts, and comments",
+      "Ensuring fast load times for media-heavy content",
+      "Building a scalable real-time interaction system with Socket.io"
+    ],
+
+    improvements: [
+      "More advanced filtering for YouTube videos (duration, quality, relevance)",
+      "Offline mode with local caching for hobby resources",
+      "AI-powered video and hobby recommendations",
+      "Group event scheduling and calendar features",
+      "Push notifications for updates, new posts, and video recommendations"
+    ]
+  }
 
 
 ];

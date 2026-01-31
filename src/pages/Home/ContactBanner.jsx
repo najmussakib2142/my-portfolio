@@ -10,14 +10,14 @@ const ContactBanner = () => {
         <section
             id="contact-banner"
 
-            className=" relative bg-gray-100 dark:bg-gray-900 py-12 md:py-16 lg:py-20 text-gray-900 dark:text-white "
+            className=" relative  bg-gray-100 dark:bg-gray-900 py-16 md:py-20 text-gray-900 dark:text-white "
         >
-            <div className="px-6 max-w-7xl mx-auto md:px-16 flex flex-col md:flex-row items-center justify-between gap-20">
+            <div className="px-6 max-w-7xl mx-auto md:px-16 flex items-center md:items-start flex-col md:flex-row justify-between gap-12 md:gap-20">
 
                 {/* Text Section */}
-                <div className="text-center md:text-left space-y-4 max-w-lg">
-                    <h2 className="text-3xl md:text-4xl font-bold">
-                        Have a project in mind? <br /> Let’s get to work.
+                <div className=" text-left items-start space-y-4 max-w-lg">
+                    <h2 className="text-3xl md:text-5xl font-bold leading-snug md:leading-tight">
+                        Have a project in mind? <br/> Let’s get to work.
                     </h2>
 
                     <Link
@@ -32,8 +32,11 @@ const ContactBanner = () => {
                 </div>
 
                 {/* Animation */}
-                <div className="w-64 md:w-120">
+                <div className="justify-center flex">
+
+                <div className="items-right w-72 md:w-120">
                     <Lottie animationData={devAnimation} loop />
+                </div>
                 </div>
             </div>
 

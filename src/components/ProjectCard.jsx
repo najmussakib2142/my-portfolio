@@ -81,8 +81,8 @@ const ProjectCard = ({ project, reverse }) => {
   return (
     <div
       className={`flex flex-col-reverse md:flex-row ${reverse ? "md:flex-row-reverse" : ""
-        }  border-gray-200  md:h-[500px]
-         dark:border-gray-800  overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 `}
+        } border border-gray-200  md:h-[500px]
+         dark:border-gray-800  overflow-hidden shadow-sm  transition-all duration-300 `}
     >
       <div className="md:w-1/2 p-8 flex flex-col justify-center text-left">
         <h4 className="text-sm font-semibold text-gray-600 dark:text-gray-400 mb-2 uppercase tracking-wide">
@@ -107,7 +107,7 @@ const ProjectCard = ({ project, reverse }) => {
 
         <Link
           to={`/projects/${project.id}`}
-          className="group w-fit inline-flex mt-2 px-5 py-3 border border-gray-300 dark:border-gray-800 
+          className="group w-fit inline-flex mt-2 px-5 py-3 border border-gray-400 dark:border-gray-600 
              text-sm font-medium hover:bg-black dark:hover:bg-white 
              text-gray-600 dark:text-gray-300 hover:text-white dark:hover:text-black 
              transition-colors duration-300"
