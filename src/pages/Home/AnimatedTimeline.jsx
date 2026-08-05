@@ -14,10 +14,19 @@ const timelineData = [
 
     {
         side: "right",
+        year: "Jul 2026 – Present",
+        title: "AI Data Specialist",
+        company: "Babel Audio",
+        subtitle: "Bengali audio transcription • AI data annotation • Quality review • Following linguistic guidelines",
+        icon: <FaBriefcase />,
+        color: "bg-yellow-400",
+    },
+
+    {
+        side: "right",
         year: "Jan 2025 – Present",
-        title: "Frontend Development Journey",
-        // company: "Self-Employed", // Added company for consistency
-        subtitle: "Building real-world projects with React, Tailwind CSS & Firebase",
+        title: "Frontend Developer | Independent Projects",
+        subtitle: "Developing real-world web applications with React, Next.js, Tailwind CSS, Firebase, and payment integration using Stripe",
         icon: <FaBriefcase />,
         color: "bg-yellow-400",
     },
@@ -183,8 +192,8 @@ const TimelineDivider = ({ label }) => (
 // --- Main Timeline Section (UPGRADED FOR MOBILE) ---
 const TimelineSection = () => (
     <section id="education"
-    className="bg-gradient-to-b from-gray-50 to-white dark:from-[#0e151f] dark:to-[#060d18]"
-        >
+        className="bg-gradient-to-b from-gray-50 to-white dark:from-[#0e151f] dark:to-[#060d18]"
+    >
         <div className="py-12 overflow-x-hidden md:py-16 mx-auto max-w-7xl  px-7 md:px-16 text-gray-900 dark:text-gray-100">
             <div className="container mx-auto">
                 {/* Heading */}

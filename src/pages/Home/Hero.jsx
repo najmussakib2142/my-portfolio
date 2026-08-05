@@ -57,8 +57,7 @@ const Hero = () => {
 
             {/* --- Subheading --- */}
             <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 max-w-xl mx-auto md:mx-0">
-              Frontend Developer | React Enthusiast | Lifelong Learner
-            </p>
+              Frontend Developer | React & Next.js | AI Data Specialist            </p>
 
             {/* --- Buttons --- */}
             <div className="flex flex-wrap justify-center md:justify-start gap-4 mt-8">
